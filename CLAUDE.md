@@ -67,7 +67,7 @@ numbers or reviews.
 - GSAP gotchas: `gsap.matchMedia` only runs its callback when AT LEAST ONE condition matches, so `useScrollAnimation` includes an always-true `always` query. GSAP/ScrollTrigger/Lenis are loaded lazily (`src/lib/loadGsap.ts`) - never import `@/lib/gsap` statically from layout/entry code.
 - Framer Motion: use the lightweight `m` component (not `motion`); features load lazily via `<LazyMotion strict>` in App.tsx.
 - Tailwind gotcha: a component that sets its own `display` (e.g. Button `inline-flex`) is NOT hidden by a `hidden` class passed in - wrap it in a `<div className="hidden md:block">` instead.
-- Home page: Hero + Statement render eagerly; everything below is `HomeBelowFold` (code-split, mounted after first paint or immediately when the URL has a #hash).
+- Home page: only the Hero renders eagerly; everything below is `HomeBelowFold` (code-split, mounted after first paint or immediately when the URL has a #hash).
 - Hero layout rule: the `wide` Tailwind variant (aspect-ratio >= 5:4) is also what `HeroScene` uses to choose side-by-side vs stacked 3D layout - keep them in sync.
 - Server: SSE chat route must stay OUTSIDE the `compression()` middleware (compression is mounted only for static files).
 - Never skip the legal placeholders review: /privacy and /terms are drafts flagged for client/counsel.

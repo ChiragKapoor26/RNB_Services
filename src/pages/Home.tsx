@@ -5,9 +5,8 @@ import { homeJsonLd } from '@/lib/jsonld'
 import { Seo } from '@/components/layout/Seo'
 import { ThemeRoot } from '@/components/sections/ThemeRoot'
 import { Hero } from '@/components/sections/Hero'
-import { Statement } from '@/components/sections/Statement'
 
-// Everything below the first two screens is code-split and mounted right after first paint
+// Everything below the hero is code-split and mounted right after first paint
 const HomeBelowFold = lazy(() => import('@/components/sections/HomeBelowFold'))
 
 /** Keeps the footer below the fold (no layout shift) while the lower sections load. */
@@ -36,7 +35,6 @@ export default function Home() {
       <Seo description={company.description} path="/" jsonLd={homeJsonLd()} />
       <ThemeRoot version={mounted ? 1 : 0}>
         <Hero />
-        <Statement />
         {showBelowFold ? (
           <Suspense fallback={<BelowFoldPlaceholder />}>
             <HomeBelowFold onMount={onMount} />

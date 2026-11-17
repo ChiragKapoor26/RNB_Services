@@ -18,15 +18,6 @@ export const home = {
     fallbackAlt: 'The R&B User, Seller and Driver app logos',
   },
 
-  statement: {
-    lines: [
-      'One app for everyday life.',
-      'Eleven services you already look for.',
-      'Two countries we call home.',
-      'One small, transparent fee.',
-    ],
-  },
-
   how: {
     eyebrow: 'How it works',
     title: 'From “I need…” to “sorted” in three steps.',

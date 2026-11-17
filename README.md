@@ -98,7 +98,7 @@ src/
                  home.ts, contact.ts, chat.ts, nav.ts, legal.ts, imageManifest.json
   components/
     layout/      Header (mega-menu, country toggle), Footer, Layout (routes + transitions), Seo
-    sections/    Hero, Statement, HowItWorks (pinned), ServicesGrid, SpotlightCarousel (continuous right-to-left marquee, pausable),
+    sections/    Hero, HowItWorks (pinned), ServicesGrid, SpotlightCarousel (continuous right-to-left marquee, pausable),
                  PhoneShowcase (3D ring), Apps, Locations (+Map), Why (+counters), FAQ, CTA, EnquiryForm
     three/       HeroScene (react-three-fiber), Hero3D (progressive loader), HeroFallback (static art)
     cards/       TiltCard3D, ItemCard, ServiceCard
