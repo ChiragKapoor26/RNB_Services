@@ -1,0 +1,14 @@
+{
+  "health-wellness": {
+    "items": {},
+    "hero": "hero.webp"
+  },
+  "artisan-carpenter": {
+    "items": {},
+    "hero": "hero.webp"
+  },
+  "fixit-now": {
+    "items": {},
+    "hero": "hero.webp"
+  }
+}

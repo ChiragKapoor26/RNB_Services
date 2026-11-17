@@ -1,0 +1,23 @@
+# Netlify: build the React app and serve it with a SPA fallback so deep links
+# like /services/events don't 404. (public/_redirects does the same job.)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- If the API runs on a separate host (Render / Railway), forward /api/* to it. ---
+# Put this block ABOVE the SPA fallback rule. Replace YOUR-API-HOST.
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://YOUR-API-HOST/api/:splat"
+#   status = 200
+#   force = true

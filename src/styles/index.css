@@ -1,0 +1,230 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   R&B Services Online - design tokens
+   Colours were sampled from the four brand logos:
+     royal blue  #2F5FE0  (cart logo)
+     taxi orange #DF6D2E  (driver app)
+     amber       #EFB232  (taxi body / basket)
+     forest      #3E7742  (user app)
+     ink         #0B0F1A  (logo type)  on warm off-white #F7F7F5
+   ------------------------------------------------------------------ */
+@theme {
+  --color-royal: #2f5fe0;
+  --color-royal-deep: #142a7a;
+  --color-royal-soft: #e8eefd;
+  --color-taxi: #df6d2e;
+  --color-taxi-deep: #a8460f;
+  --color-taxi-soft: #fcebe0;
+  --color-sun: #efb232;
+  --color-sun-deep: #8a5e00;
+  --color-sun-soft: #fdf3d9;
+  --color-forest: #3e7742;
+  --color-forest-deep: #173a1d;
+  --color-forest-soft: #e6f1e7;
+  --color-ink: #0b0f1a;
+  --color-ink-soft: #1a2133;
+  --color-paper: #f7f7f5;
+  --color-mist: #e4e4de;
+  --color-muted: #566074;
+
+  --font-display: 'Playfair Display Variable', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-dot: dot 1.2s ease-in-out infinite;
+  --animate-rise: rise 0.9s var(--ease-apple) both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+  /* the marquee track holds 3 identical copies of the cards: sliding by exactly one copy loops seamlessly */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.3333%);
+    }
+  }
+  /* transform-only on purpose: text stays visible from the very first paint (good for FCP/LCP) */
+  @keyframes rise {
+    from {
+      transform: translateY(26px);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgb(47 95 224 / 0.45);
+    }
+    100% {
+      box-shadow: 0 0 0 18px rgb(47 95 224 / 0);
+    }
+  }
+  @keyframes dot {
+    0%,
+    80%,
+    100% {
+      opacity: 0.25;
+      transform: translateY(0);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Same rule the 3D hero uses (aspect >= 5:4) to decide between side-by-side and stacked layouts */
+@custom-variant wide (@media (min-aspect-ratio: 5/4));
+
+/* `inline` so var(--marquee-duration) is resolved on the element (not once at :root), letting each
+   breakpoint set its own speed with [--marquee-duration:..] */
+@theme inline {
+  --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
+}
+
+@utility container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 40rem) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 64rem) {
+    padding-inline: 3rem;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--color-paper);
+    min-width: 320px;
+    overflow-x: clip;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+  }
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-royal);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .on-dark :focus-visible,
+  [data-theme='ink'] :focus-visible,
+  [data-theme='royal'] :focus-visible,
+  [data-theme='forest'] :focus-visible {
+    outline-color: #ffffff;
+  }
+  ::selection {
+    background: var(--color-royal);
+    color: #fff;
+  }
+}
+
+/* ---- Lenis (recommended base CSS) ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---- Home theme morph: sections are transparent while the wrapper's background
+   is animated by JS. Without JS / with reduced motion they keep their own colours. ---- */
+.theme-root[data-morph='on'] [data-theme] {
+  background-color: transparent !important;
+}
+[data-theme='paper'] {
+  background-color: var(--color-paper);
+}
+[data-theme='ink'] {
+  background-color: var(--color-ink);
+  color: #fff;
+}
+[data-theme='royal'] {
+  background-color: var(--color-royal-deep);
+  color: #fff;
+}
+[data-theme='forest'] {
+  background-color: var(--color-forest-deep);
+  color: #fff;
+}
+
+/* ---- 3D helpers ---- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
