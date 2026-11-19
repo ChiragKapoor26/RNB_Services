@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **68 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **61 of 77** images are still missing.
 
 ## How to add photos
 
@@ -129,13 +129,13 @@ Drop files in `_assets/photos/buy-any-car/`.  Search ideas: Toyota Corolla, Hond
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `toyota-corolla-2016.jpg` | Toyota Corolla |
-| ⬜ | `honda-civic-2018.jpg` | Honda Civic |
-| ⬜ | `hyundai-elantra-2017.jpg` | Hyundai Elantra |
-| ⬜ | `toyota-rav4-2017.jpg` | Toyota RAV4 |
-| ⬜ | `nissan-rogue-2016.jpg` | Nissan Rogue |
-| ⬜ | `ford-ranger-2015.jpg` | Ford Ranger |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `toyota-corolla-2016.jpg` | Toyota Corolla |
+| ✅ | `honda-civic-2018.jpg` | Honda Civic |
+| ✅ | `hyundai-elantra-2017.jpg` | Hyundai Elantra |
+| ✅ | `toyota-rav4-2017.jpg` | Toyota RAV4 |
+| ✅ | `nissan-rogue-2016.jpg` | Nissan Rogue |
+| ✅ | `ford-ranger-2015.jpg` | Ford Ranger |
 
 ## Rent & Lease (`rent-and-lease`)
 

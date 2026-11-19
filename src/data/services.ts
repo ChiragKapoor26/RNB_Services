@@ -611,6 +611,7 @@ export const services: Service[] = [
     summary: 'Find a quality second-hand car from local sellers in Ghana and Canada.',
     accent: 'blue',
     icon: 'car',
+    imageFocus: '55% 30%', // keeps the smiling face + the raised car key in frame in every crop (page hero, home tile, spotlight)
     intro: [
       'Buying a car is a big decision. R&B connects you with local sellers of second-hand cars, SUVs and pickups in Ghana and Canada, so you can compare options and talk to sellers directly.',
       'Tell us your budget, body type and city. We introduce you to sellers with matching vehicles; you agree viewing, price and paperwork directly.',
@@ -633,6 +634,7 @@ export const services: Service[] = [
         tag: 'Saloon',
         offers: { ghana: gh(118000, 'Accra') },
         details: ['2016', '98,000 km', 'Automatic', 'Petrol'],
+        imageFocus: '50% 55%',
       },
       {
         id: 'honda-civic-2018',
@@ -641,6 +643,7 @@ export const services: Service[] = [
         tag: 'Saloon',
         offers: { canada: ca(19500, 'Toronto') },
         details: ['2018', '82,000 km', 'Automatic (CVT)', 'Petrol'],
+        imageFocus: '45% 50%',
       },
       {
         id: 'hyundai-elantra-2017',
@@ -649,6 +652,7 @@ export const services: Service[] = [
         tag: 'Saloon',
         offers: { ghana: gh(96000, 'Kumasi') },
         details: ['2017', '76,000 km', 'Automatic', 'Petrol'],
+        imageFocus: '50% 75%', // tall photo: keep the car, not the sky
       },
       {
         id: 'toyota-rav4-2017',
@@ -657,6 +661,7 @@ export const services: Service[] = [
         tag: 'SUV',
         offers: { canada: ca(24900, 'Ottawa') },
         details: ['2017', '112,000 km', 'Automatic', 'AWD'],
+        imageFocus: '48% 50%',
       },
       {
         id: 'nissan-rogue-2016',
@@ -665,6 +670,7 @@ export const services: Service[] = [
         tag: 'SUV',
         offers: { canada: ca(17800, 'Calgary') },
         details: ['2016', '120,000 km', 'Automatic', 'AWD'],
+        imageFocus: '100% 50%', // the front (grille + badge) is at the right edge of this photo
       },
       {
         id: 'ford-ranger-2015',
@@ -673,6 +679,7 @@ export const services: Service[] = [
         tag: 'Pickup',
         offers: { ghana: gh(185000, 'Takoradi') },
         details: ['2015', '140,000 km', 'Manual', 'Diesel'],
+        imageFocus: '40% 50%',
       },
     ],
   },
