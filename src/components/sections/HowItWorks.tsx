@@ -53,16 +53,17 @@ export function HowItWorks() {
 
   return (
     <section ref={ref} id="how-it-works" data-theme="ink" aria-labelledby="how-title" className="relative text-white">
-      <div data-pin className="relative flex min-h-[100svh] items-center py-24 md:py-0">
-        <div className="container-x grid gap-14 md:grid-cols-2 md:items-center md:gap-10 lg:gap-24">
+      {/* phones: content-height block (no forced full-screen section); desktop: full-height pinned stage */}
+      <div data-pin className="relative flex items-center py-12 md:min-h-[100svh] md:py-0">
+        <div className="container-x grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-24">
           <div>
             <div id="how-title">
               <SectionHeading eyebrow={how.eyebrow} title={how.title} tone="dark" />
             </div>
-            <ol className="relative mt-10 space-y-7">
+            <ol className="relative mt-7 space-y-5 md:mt-10 md:space-y-7">
               <span
                 aria-hidden="true"
-                className="absolute left-[19px] top-3 hidden h-[calc(100%-1.5rem)] w-px bg-white/15 md:block"
+                className="absolute left-[19px] top-3 h-[calc(100%-1.5rem)] w-px bg-white/15"
               />
               <span
                 data-progress
@@ -76,8 +77,8 @@ export function HowItWorks() {
                     {i + 1}
                   </span>
                   <div>
-                    <h3 className="font-sans text-xl font-bold tracking-normal text-white">{s.title}</h3>
-                    <p className="mt-1.5 max-w-md text-[15px] leading-relaxed text-white/70">{s.text}</p>
+                    <h3 className="font-sans text-lg font-bold tracking-normal text-white md:text-xl">{s.title}</h3>
+                    <p className="mt-1 max-w-md text-[15px] leading-relaxed text-white/70 md:mt-1.5">{s.text}</p>
                   </div>
                 </li>
               ))}

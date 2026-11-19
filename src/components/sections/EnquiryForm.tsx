@@ -187,9 +187,9 @@ export function EnquiryForm() {
         onSubmit={onSubmit}
         noValidate
         aria-label="Enquiry form"
-        className="space-y-6 rounded-[32px] bg-white p-6 ring-1 ring-ink/[0.07] shadow-[0_30px_60px_-30px_rgba(11,15,26,0.3)] sm:p-9"
+        className="space-y-5 rounded-[28px] bg-white p-5 ring-1 ring-ink/[0.07] shadow-[0_30px_60px_-30px_rgba(11,15,26,0.3)] sm:space-y-6 sm:rounded-[32px] sm:p-9"
       >
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <Field id={`${uid}-name`} label={f.name} error={errors.name}>
             <input
               id={`${uid}-name`}
@@ -296,7 +296,7 @@ export function EnquiryForm() {
           <textarea
             id={`${uid}-message`}
             name="message"
-            rows={6}
+            rows={5}
             maxLength={2000}
             value={values.message}
             onChange={set('message')}

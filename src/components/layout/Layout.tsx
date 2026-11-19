@@ -6,6 +6,7 @@ import { getLenis, scrollToHash, scrollToTop } from '@/lib/lenis'
 import { refreshScrollTriggers } from '@/lib/loadGsap'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { MobileEnquireButton } from './MobileEnquireButton'
 import { PageFallback } from './PageFallback'
 
 // The landing page ships with the entry bundle (no extra round trip before first paint);
@@ -87,6 +88,7 @@ export default function Layout() {
         </AnimatePresence>
       </main>
       <Footer />
+      <MobileEnquireButton />
       <Suspense fallback={null}>
         <ChatWidget />
       </Suspense>

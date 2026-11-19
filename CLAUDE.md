@@ -71,3 +71,9 @@ numbers or reviews.
 - Hero layout rule: the `wide` Tailwind variant (aspect-ratio >= 5:4) is also what `HeroScene` uses to choose side-by-side vs stacked 3D layout - keep them in sync.
 - Server: SSE chat route must stay OUTSIDE the `compression()` middleware (compression is mounted only for static files).
 - Never skip the legal placeholders review: /privacy and /terms are drafts flagged for client/counsel.
+- Mobile UX (phones = below `md`, 768px; desktop is the unchanged baseline). The Home page was ~25 phone screens; it is now ~10. Keep it short:
+  - `HomeBelowFold` renders a different order on phones (Services first, then How it works, Locations, Why, Apps, FAQ, CTA) and does NOT render `SpotlightCarousel` or `PhoneShowcase` there (they duplicate Services/Apps; the pinned phone ring alone added ~2.5 screens of scroll-jacking).
+  - Compact phone variants are done with `md:` utilities on the SAME markup (ServiceCard = photo + short title tile in a 2-col grid, ItemCard = thumbnail row via `display: contents`, AppsSection = logo/name row + one "Coming soon" badge, Footer = 2-col links). Sections use `py-12 md:py-32` and `SectionHeading` steps down to `text-3xl`; don't reintroduce `py-24`+ on phones.
+  - `ThemeRoot`'s scroll colour-morph is skipped on phones (it washed out text in the short sections); `TiltCard3D` doesn't float on phones.
+  - Hero fits one screen on phones (`pb-[44svh]` reserve) so the 3D/app-logo scene is not cut off by the fold. `MobileEnquireButton` is a Home-only floating CTA (<640px); the header Enquire button is hidden below 640px.
+  - Data flag `desktopOnly` on a `home.why.pillars` entry hides it on phones (it repeats the fee box). Re-measure with a 390x844 viewport after layout changes - target Home <= ~10 screens.

@@ -15,7 +15,7 @@ export function MapFallback({ loading = false }: { loading?: boolean }) {
   const active = getLocation(country)
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#e9edf7] py-4">
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#e9edf7] py-3 md:py-4">
       {/* subtle map-like grid + roads */}
       <div
         aria-hidden="true"
@@ -36,17 +36,17 @@ export function MapFallback({ loading = false }: { loading?: boolean }) {
       <div className="relative z-10 mx-5 flex max-w-sm flex-col items-center text-center">
         <div className="relative">
           <span className="absolute inset-0 animate-pulse-ring rounded-full" aria-hidden="true" />
-          <div className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full bg-white shadow-xl ring-4 ring-royal">
-            <img src="/brand/rnb-main.webp" alt="" width={64} height={64} className="h-[52px] w-[52px] rounded-full" />
+          <div className="relative flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-xl ring-[3px] ring-royal md:h-[68px] md:w-[68px] md:ring-4">
+            <img src="/brand/rnb-main.webp" alt="" width={64} height={64} className="h-9 w-9 rounded-full md:h-[52px] md:w-[52px]" />
           </div>
         </div>
-        <p className="mt-3 font-display text-2xl font-semibold text-ink sm:text-3xl">{active.city}, {active.country}</p>
-        <p className="mt-1 flex items-center gap-1.5 text-sm text-muted">
+        <p className="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl md:mt-3 md:text-3xl">{active.city}, {active.country}</p>
+        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted md:mt-1">
           <MapPin size={14} aria-hidden="true" />
           {loading ? home.map.loading : home.map.staticLabel}
         </p>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        <div className="mt-3 flex flex-wrap justify-center gap-2 md:mt-4">
           {locations.map((l) => (
             <button
               key={l.id}
@@ -54,7 +54,7 @@ export function MapFallback({ loading = false }: { loading?: boolean }) {
               aria-pressed={l.id === country}
               onClick={() => setCountry(l.id)}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-semibold transition-colors',
+                'rounded-full px-4 py-1.5 text-sm font-semibold transition-colors md:py-2',
                 l.id === country ? 'bg-ink text-white' : 'bg-white text-ink hover:bg-paper',
               )}
             >
@@ -67,12 +67,12 @@ export function MapFallback({ loading = false }: { loading?: boolean }) {
           href={mapsSearchUrl(`${active.city}, ${active.country}`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-2 rounded-full bg-royal px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-royal-deep"
+          className="mt-3 inline-flex items-center gap-2 rounded-full bg-royal px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-royal-deep md:mt-4"
         >
           {home.map.openInMaps}
           <ExternalLink size={15} aria-hidden="true" />
         </a>
-        {!hasGoogleMapsKey && <p className="mt-2 text-xs text-muted">{home.map.fallbackNote}</p>}
+        {!hasGoogleMapsKey && <p className="mt-2 hidden text-xs text-muted md:block">{home.map.fallbackNote}</p>}
       </div>
     </div>
   )

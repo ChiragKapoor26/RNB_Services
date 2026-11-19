@@ -10,20 +10,22 @@ export function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="on-dark relative bg-ink text-white" aria-label="Site footer">
-      <div className="container-x py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+      {/* extra bottom padding on phones keeps the last links clear of the floating Enquire / chat buttons */}
+      <div className="container-x pb-24 pt-10 md:py-16 lg:py-20">
+        {/* phones: 2-column grid (brand + services span both columns, Company/Legal sit side by side) */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:gap-12 lg:grid-cols-12">
           {/* Brand + apps */}
-          <div className="lg:col-span-4">
+          <div className="col-span-2 lg:col-span-4">
             <Link to="/" className="inline-flex items-center gap-3">
-              <img src="/brand/rnb-main.webp" alt="" width={56} height={56} className="h-14 w-14 rounded-full bg-white p-1" loading="lazy" />
+              <img src="/brand/rnb-main.webp" alt="" width={56} height={56} className="h-12 w-12 rounded-full bg-white p-1 md:h-14 md:w-14" loading="lazy" />
               <span className="font-display text-2xl font-semibold">R&amp;B Services</span>
               <span className="sr-only"> {ui.homeLink}</span>
             </Link>
-            <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-white/70">{ui.footerBlurb}</p>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/50">{ui.footerFee}</p>
+            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-white/70 md:mt-5">{ui.footerBlurb}</p>
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/50 md:mt-3">{ui.footerFee}</p>
 
-            <h2 className="mt-8 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/50">{ui.footerApps}</h2>
-            <ul className="mt-4 flex gap-3">
+            <h2 className="mt-6 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/50 md:mt-8">{ui.footerApps}</h2>
+            <ul className="mt-3 flex gap-3 md:mt-4">
               {apps.map((a) => (
                 <li key={a.id}>
                   <Link
@@ -38,13 +40,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3">
+          {/* Services (two columns of links on phones) */}
+          <div className="col-span-2 lg:col-span-3">
             <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/50">{ui.footerServices}</h2>
-            <ul className="mt-5 space-y-2.5 text-[15px]">
+            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 text-[15px] md:mt-5 md:block md:space-y-2.5">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/services/${s.slug}`} className="text-white/80 transition-colors hover:text-white">
+                  <Link to={`/services/${s.slug}`} className="block py-1.5 text-white/80 transition-colors hover:text-white md:inline md:py-0">
                     {s.shortTitle}
                   </Link>
                 </li>
@@ -52,17 +54,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company + legal */}
-          <div className="lg:col-span-2">
+          {/* Company + legal: side by side on phones, stacked in one column on desktop */}
+          <div className="col-span-2 grid grid-cols-2 gap-x-6 md:block lg:col-span-2">
             {footerNav.map((group) => (
-              <div key={group.title} className="mb-8 last:mb-0">
+              <div key={group.title} className="md:mb-8 md:last:mb-0">
                 <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/50">{group.title}</h2>
-                <ul className="mt-5 space-y-2.5 text-[15px]">
+                <ul className="mt-4 space-y-1 text-[15px] md:mt-5 md:space-y-2.5">
                   {group.links.map((l) => (
                     <li key={l.label}>
                       <Link
                         to={{ pathname: l.to, hash: l.hash ? `#${l.hash}` : '' }}
-                        className="text-white/80 transition-colors hover:text-white"
+                        className="block py-1.5 text-white/80 transition-colors hover:text-white md:inline md:py-0"
                       >
                         {l.label}
                       </Link>
@@ -74,9 +76,9 @@ export function Footer() {
           </div>
 
           {/* Offices */}
-          <div className="lg:col-span-3">
+          <div className="col-span-2 lg:col-span-3">
             <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/50">{ui.footerOffices}</h2>
-            <ul className="mt-5 space-y-6">
+            <ul className="mt-4 space-y-5 md:mt-5 md:space-y-6">
               {locations.map((l) => (
                 <li key={l.id} className="text-[15px] leading-relaxed">
                   <p className="font-semibold text-white">{l.label}</p>
@@ -106,7 +108,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-5 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between md:mt-14 md:gap-3 md:pt-6">
           <p>
             © {year} {ui.footerCopyright}
           </p>

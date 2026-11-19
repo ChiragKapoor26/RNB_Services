@@ -1,6 +1,6 @@
 import { useRef, type CSSProperties, type PointerEvent, type ReactNode } from 'react'
 import { m, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { useCanHover, usePrefersReducedMotion } from '@/hooks/useMedia'
+import { useCanHover, useIsMobile, usePrefersReducedMotion } from '@/hooks/useMedia'
 import { cn } from '@/lib/cn'
 
 interface Props {
@@ -17,7 +17,8 @@ interface Props {
 /**
  * Reusable 3D card wrapper.
  *  - Pointer devices: perspective tilt that follows the cursor + moving glare highlight + spring hover/press.
- *  - Touch devices:   no tilt, a gentle floating motion instead.
+ *  - Touch tablets:   no tilt, a gentle floating motion instead.
+ *  - Phones:          no tilt and no float - dense grids of bobbing cards look messy and cost battery.
  *  - Reduced motion:  completely static (no entrance, tilt or float).
  *  - Staggered fade/rise entrance when scrolled into view.
  *
@@ -28,7 +29,9 @@ export function TiltCard3D({ children, className, maxTilt = 9, index = 0, radius
   const ref = useRef<HTMLDivElement>(null)
   const canHover = useCanHover()
   const reduce = usePrefersReducedMotion()
+  const phone = useIsMobile()
   const tilt = canHover && !reduce
+  const float = !tilt && !reduce && !phone
 
   const px = useMotionValue(0.5)
   const py = useMotionValue(0.5)
@@ -56,8 +59,7 @@ export function TiltCard3D({ children, className, maxTilt = 9, index = 0, radius
     glareOpacity.set(0)
   }
 
-  const floatStyle: CSSProperties | undefined =
-    !tilt && !reduce ? { animationDelay: `${(index % 5) * -1.4}s` } : undefined
+  const floatStyle: CSSProperties | undefined = float ? { animationDelay: `${(index % 5) * -1.4}s` } : undefined
 
   return (
     <m.div
@@ -67,7 +69,7 @@ export function TiltCard3D({ children, className, maxTilt = 9, index = 0, radius
       transition={{ duration: 0.75, delay: (index % 3) * 0.09, ease: [0.22, 1, 0.36, 1] }}
       className={cn('h-full', className)}
     >
-      <div className={cn('h-full', !tilt && !reduce && 'animate-float')} style={floatStyle}>
+      <div className={cn('h-full', float && 'animate-float')} style={floatStyle}>
         <div className="h-full [perspective:1000px]">
           <m.div
             ref={ref}

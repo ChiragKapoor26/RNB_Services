@@ -33,7 +33,9 @@ export function Hero() {
       id="top"
       data-theme="paper"
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-[100svh] items-start overflow-x-clip pb-[56svh] pt-28 wide:items-center wide:pb-24 wide:pt-24"
+      // Phones: copy on top, 3D scene in the reserved lower ~44% - together they fit ONE screen, so the
+      // app logos are no longer cut off by the fold (the old 56svh reserve pushed the hero past 100svh).
+      className="relative isolate flex min-h-[100svh] items-start overflow-x-clip pb-[44svh] pt-24 wide:items-center wide:pb-24 wide:pt-24"
     >
       {/* soft brand-coloured glows behind the 3D scene */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -46,13 +48,13 @@ export function Hero() {
 
       <div className="container-x pointer-events-none relative z-10">
         <div data-hero-copy className="max-w-2xl">
-          <p style={rise(0)} className="animate-rise mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-royal shadow-sm ring-1 ring-ink/5 backdrop-blur">
+          <p style={rise(0)} className="animate-rise mb-4 inline-flex items-center gap-2 rounded-full bg-white/80 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-royal shadow-sm ring-1 ring-ink/5 backdrop-blur sm:mb-6 sm:px-4 sm:py-2">
             <span className="h-2 w-2 rounded-full bg-forest" aria-hidden="true" />
             {h.eyebrow}
           </p>
           <h1
             id="hero-title"
-            className="text-[clamp(2.3rem,5.2vw,4.1rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-ink"
+            className="text-[clamp(2.1rem,5.2vw,4.1rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-ink"
           >
             {h.titleParts.map((part, i) => (
               <span key={part.text}>
@@ -69,14 +71,16 @@ export function Hero() {
               </span>
             ))}
           </h1>
-          <p style={rise(4)} className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-ink/70 sm:text-xl">
+          <p style={rise(4)} className="animate-rise mt-4 max-w-xl text-base leading-relaxed text-ink/70 sm:mt-7 sm:text-xl">
             {h.subtitle}
           </p>
-          <div style={rise(5)} className="animate-rise pointer-events-auto mt-9 flex flex-wrap gap-3">
-            <Button to={{ pathname: '/', hash: '#services' }} size="lg">
+          {/* phones: two equal, full-width buttons (bigger thumb targets, tidier than ragged left-aligned pills) */}
+          <div style={rise(5)} className="animate-rise pointer-events-auto mt-6 flex flex-col gap-2.5 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-3">
+            <Button to={{ pathname: '/', hash: '#services' }} size="md" className="w-full sm:h-14 sm:w-auto sm:px-8 sm:text-base">
               {h.primaryCta}
             </Button>
-            <Button variant="outline" size="lg" onClick={openChat}>
+            {/* frosted on phones so it stays legible if the 3D scene sits behind it on very short screens */}
+            <Button variant="outline" size="md" onClick={openChat} className="w-full max-sm:bg-white/70 max-sm:backdrop-blur-sm sm:h-14 sm:w-auto sm:px-8 sm:text-base">
               <MessageCircle size={18} aria-hidden="true" />
               {h.secondaryCta}
             </Button>

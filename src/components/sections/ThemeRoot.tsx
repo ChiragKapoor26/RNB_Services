@@ -16,12 +16,16 @@ const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) /
  * Wraps the Home sections. While scrolling, the wrapper's background morphs smoothly between the
  * brand colours of neighbouring sections (paper -> ink -> royal -> forest ...). The sections keep
  * their own static colours in CSS, so without JS or with reduced motion nothing breaks.
+ *
+ * Skipped on phones too: the compact mobile sections are short, so a blend spanning ~45% of the
+ * viewport would wash out light/dark text mid-scroll (failing contrast). Crisp, solid section
+ * colours read better there and save a scroll handler.
  */
 export function ThemeRoot({ children, version = 0 }: { children: ReactNode; /** bump when sections are added later (lazy-loaded) so they get re-measured */ version?: number }) {
   const ref = useRef<HTMLDivElement>(null)
 
-  useScrollAnimation(ref, ({ ScrollTrigger, reduce, scope }) => {
-    if (reduce) return
+  useScrollAnimation(ref, ({ ScrollTrigger, reduce, mobile, scope }) => {
+    if (reduce || mobile) return
     const sections = Array.from(scope.querySelectorAll<HTMLElement>(':scope > [data-theme]'))
     if (sections.length < 2) return
     const colors = sections.map((s) => THEMES[s.dataset.theme ?? 'paper'] ?? THEMES.paper)

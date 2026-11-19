@@ -22,19 +22,20 @@ export function LocationsSection() {
   const mapCopy = home.map
 
   return (
-    <section id="locations" data-theme="paper" aria-labelledby="locations-title" className="scroll-mt-20 py-24 sm:py-32">
+    <section id="locations" data-theme="paper" aria-labelledby="locations-title" className="scroll-mt-20 py-12 md:py-32">
       <div className="container-x">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-wrap items-end justify-between gap-4 md:gap-6">
           <div id="locations-title">
-            <SectionHeading eyebrow={mapCopy.eyebrow} title={mapCopy.title} subtitle={mapCopy.subtitle} />
+            {/* the toggle explains itself on phones, so the helper subtitle is dropped there */}
+            <SectionHeading eyebrow={mapCopy.eyebrow} title={mapCopy.title} subtitle={mapCopy.subtitle} className="max-md:[&>p:last-child]:hidden" />
           </div>
           <CountryToggle />
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-5">
+        <div className="mt-5 grid gap-4 md:mt-12 md:gap-6 lg:grid-cols-5">
           <div
             ref={mapRef}
-            className="relative h-[380px] overflow-hidden rounded-[32px] bg-white shadow-[0_30px_60px_-30px_rgba(11,15,26,0.35)] ring-1 ring-ink/[0.07] sm:h-[460px] lg:col-span-3 lg:h-[540px]"
+            className="relative h-[250px] overflow-hidden rounded-[24px] bg-white shadow-[0_30px_60px_-30px_rgba(11,15,26,0.35)] ring-1 ring-ink/[0.07] sm:h-[300px] md:h-[460px] md:rounded-[32px] lg:col-span-3 lg:h-[540px]"
           >
             {hasGoogleMapsKey && nearViewport ? (
               <Suspense fallback={<MapFallback loading />}>
@@ -53,14 +54,14 @@ export function LocationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="flex h-full flex-col rounded-[32px] bg-ink p-8 text-white shadow-[0_30px_60px_-30px_rgba(11,15,26,0.6)] sm:p-10"
+                className="flex h-full flex-col rounded-[24px] bg-ink p-5 text-white shadow-[0_30px_60px_-30px_rgba(11,15,26,0.6)] md:rounded-[32px] md:p-10"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-sun">{loc.label}</p>
-                <h3 className="mt-3 font-display text-4xl font-semibold leading-tight">
+                <h3 className="mt-2 font-display text-2xl font-semibold leading-tight md:mt-3 md:text-4xl">
                   {loc.city}, {loc.country}
                 </h3>
 
-                <dl className="mt-8 space-y-5 text-[15px]">
+                <dl className="mt-4 space-y-3 text-[15px] md:mt-8 md:space-y-5">
                   <div className="flex gap-3">
                     <dt className="mt-0.5 text-sun"><MapPin size={18} aria-label="Address" /></dt>
                     <dd className="text-white/80">{loc.address}</dd>
@@ -82,10 +83,10 @@ export function LocationsSection() {
                 </dl>
 
                 {loc.isPlaceholder && (
-                  <p className="mt-6 rounded-2xl bg-white/[0.08] px-4 py-3 text-sm text-white/70">{mapCopy.placeholderNote}</p>
+                  <p className="mt-4 rounded-2xl bg-white/[0.08] px-4 py-3 text-sm text-white/70 md:mt-6">{mapCopy.placeholderNote}</p>
                 )}
 
-                <div className="mt-auto pt-8">
+                <div className="mt-auto pt-5 md:pt-8">
                   <Button variant="sun" href={mapsDirectionsUrl(loc.lat, loc.lng)}>
                     <Navigation size={17} aria-hidden="true" />
                     {mapCopy.directions}

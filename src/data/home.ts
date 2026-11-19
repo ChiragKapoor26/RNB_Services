@@ -103,6 +103,8 @@ export const home = {
         icon: 'coins',
         title: 'One small, clear fee',
         text: 'A small connection fee is shown before you confirm. No hidden charges, no surprises.',
+        // the "How our fee works" box covers this right below it - skipped on phones to keep the page short
+        desktopOnly: true,
       },
       {
         icon: 'shield',
@@ -114,7 +116,7 @@ export const home = {
         title: 'Truly local',
         text: 'Real providers in Accra, Kumasi, Takoradi, Toronto, Ottawa and Calgary, with more cities to come.',
       },
-    ] as { icon: 'handshake' | 'coins' | 'shield' | 'map-pin'; title: string; text: string }[],
+    ] as { icon: 'handshake' | 'coins' | 'shield' | 'map-pin'; title: string; text: string; desktopOnly?: boolean }[],
     feeBox: {
       title: 'How our fee works',
       lines: [
