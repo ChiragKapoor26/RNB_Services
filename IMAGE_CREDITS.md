@@ -14,20 +14,26 @@ Every image used on the site must be listed here with its source and licence.
 
 ## Photos
 
-Hero photos supplied for four services (FixIt Now, Health & Wellness, Artisan & Carpenter, Buy Any Car), plus listing photos for all six Health & Wellness items and all six Buy Any Car items (every other service's cards still show branded placeholders - see `IMAGE_TODO.md`).
+Hero photos supplied for six services (FixIt Now, Health & Wellness, Artisan & Carpenter, Buy Any Car, Rent & Lease, Event Decor & Event Planning), plus listing photos for all six Health & Wellness items, all six Buy Any Car items and all six Rent & Lease items (every other service's cards still show branded placeholders - see `IMAGE_TODO.md`).
 
 > **⚠ Licence check needed before launch.** Nearly all of these files look like **watermarked preview images from stock-photo sites**
 > (the carpenter and Buy Any Car heroes clearly show tiled "Vecteezy" watermarks; the plumber photo has a faint watermark too).
 > The six Health & Wellness listing photos are previews as well: `home-nursing` and `gp-telehealth` carry visible **Getty Images**
 > watermarks, `massage-therapy` shows a **Shutterstock** caption strip, and `physiotherapy` has faint repeating marks.
 > The six Buy Any Car listing photos have no watermark, but they look like web-search images (press, dealer and car-review photos)
-> of unknown origin, so their licence is unconfirmed too.
+> of unknown origin, so their licence is unconfirmed too. The Rent & Lease photos are mixed: `accra-shop-space` carries a
+> visible **Getty Images** watermark, `accra-apartment-lease` has a faint repeating logo mark, and the hero plus the other four
+> have no watermark but an unknown source.
+> The Events hero has no watermark and is high-resolution, but its source is unknown and it shows an identifiable person (an event
+> stylist at work): confirm the licence, and that she and the photographer agreed to its use, or replace it.
 > Preview images are not licensed for commercial use. Buy/download the licensed originals (or use the client's own photos) and
 > replace them: put the new file in `_assets/photos/<slug>/` named `hero.jpg` (or the item id, e.g. `home-nursing.jpg`),
 > then run `npm run photos`. Only the file changes - the per-photo framing lives in `imageFocus` in `src/data/services.ts`.
 >
-> Sizes: the nurses hero is only 220 x 148 px, the Buy Any Car hero 678 x 452 px, the six Health & Wellness listing photos
-> 400-611 px and the six car photos 494-700 px wide, so they look soft on high-density (retina) screens. Listing cards need
+> Sizes: the Rent & Lease hero is only 239 x 192 px and the nurses hero 220 x 148 px (both are shown 2-3x larger than that, so
+> they look soft - replace these first), the Buy Any Car hero is 678 x 452 px, the six Health & Wellness listing photos
+> 400-611 px, the six car photos 494-700 px and the six Rent & Lease listing photos 540-693 px wide, so they look soft on
+> high-density (retina) screens. Listing cards need
 > roughly 700 px or more of width to stay sharp; heroes (shown up to ~560 px wide) are best at around 1100 px.
 
 | File in `public/images/` | Supplied as | Used for | Source / photographer | Licence |
@@ -36,6 +42,8 @@ Hero photos supplied for four services (FixIt Now, Health & Wellness, Artisan & 
 | `health-wellness/hero.webp` | `RNB_Health_wellness.jpg` | Health & Wellness | Unknown stock preview (supplied by client) | **Not confirmed - replace with licensed copy** |
 | `artisan-carpenter/hero.webp` | `RNB_carpenter.jpg` | Artisan & Carpenter | Vecteezy preview (watermarked, supplied by client) | **Not confirmed - replace with licensed copy** |
 | `buy-any-car/hero.webp` | `7.jpg` | Buy Any Car | Vecteezy preview (tiled watermarks across the whole photo; supplied by client) | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/hero.webp` | `14.jpg` | Rent & Lease | Unknown source (supplied by client); no watermark; only 239 x 192 px | **Not confirmed - replace with licensed copy** |
+| `events/hero.webp` | `21.webp` | Event Decor & Event Planning | Unknown source (supplied by client); no watermark; professional event photo of an identifiable person | **Not confirmed - confirm the licence and the person's consent, or replace** |
 | `health-wellness/gp-telehealth.webp` | `6.jpg` | Health & Wellness: GP / telehealth consultation | Getty Images preview (watermarked; credit shown: Sean Anthony Eddy; ID 2223908435; supplied by client) | **Not confirmed - replace with licensed copy** |
 | `health-wellness/physiotherapy.webp` | `5.jpg` | Health & Wellness: Physiotherapy | Unknown stock preview (faint repeating marks; supplied by client) | **Not confirmed - replace with licensed copy** |
 | `health-wellness/massage-therapy.webp` | `4.jpg` | Health & Wellness: Massage therapy | Shutterstock preview (caption strip shows ID 2222349701; supplied by client) | **Not confirmed - replace with licensed copy** |
@@ -48,6 +56,12 @@ Hero photos supplied for four services (FixIt Now, Health & Wellness, Artisan & 
 | `buy-any-car/toyota-rav4-2017.webp` | `12.jpg` | Buy Any Car: Toyota RAV4 | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
 | `buy-any-car/nissan-rogue-2016.webp` | `11.jpg` | Buy Any Car: Nissan Rogue | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
 | `buy-any-car/ford-ranger-2015.webp` | `8.jpg` | Buy Any Car: Ford Ranger | Unknown source (supplied by client); no watermark; press-style photo of a Ranger Raptor (UK number plate visible) | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/accra-apartment-lease.webp` | `19.jpg` | Rent & Lease: Two-bedroom apartment | Unknown stock source (supplied by client); faint repeating logo watermark across the photo | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/kumasi-townhouse-lease.webp` | `16.jpg` | Rent & Lease: Family townhouse | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/accra-shop-space.webp` | `15.jpg` | Rent & Lease: Street-front shop space | Getty Images preview (watermarked; credit shown: Mitch Diamond; ID 593432551; supplied by client) | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/toronto-office.webp` | `20.jpg` | Rent & Lease: Private small office | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/ottawa-co-living-room.webp` | `17.jpg` | Rent & Lease: Co-living room | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
+| `rent-and-lease/calgary-warehouse.webp` | `18.jpg` | Rent & Lease: Light-industrial warehouse | Unknown source (supplied by client); no watermark; black-and-white image | **Not confirmed - replace with licensed copy** |
 
 The original hero files are kept, under the names they were supplied with, in `_assets/photos/_originals/`.
 The six Health & Wellness listing photos were supplied as `1.jpg` - `6.jpg`; the unmodified files now sit in
@@ -55,6 +69,11 @@ The six Health & Wellness listing photos were supplied as `1.jpg` - `6.jpg`; the
 The Buy Any Car hero was supplied as `7.jpg`; the unmodified file is `_assets/photos/buy-any-car/hero.jpg`.
 The six Buy Any Car listing photos were supplied as `8.jpg` - `13.jpg`; the unmodified files sit in
 `_assets/photos/buy-any-car/` under their listing ids (see the "Supplied as" column).
+The Rent & Lease hero was supplied as `14.jpg`; the unmodified file is `_assets/photos/rent-and-lease/hero.jpg`.
+The six Rent & Lease listing photos were supplied as `15.jpg` - `20.jpg`; the unmodified files sit in
+`_assets/photos/rent-and-lease/` under their listing ids (see the "Supplied as" column).
+The Events hero was supplied as `21.webp` at 1732 x 1155 px (`npm run photos` shrinks anything wider than 1200 px to keep pages
+fast); the unmodified file is `_assets/photos/events/hero.webp`.
 
 When you add more photos, record each one in the table above (one row per file in `public/images/`), e.g.:
 

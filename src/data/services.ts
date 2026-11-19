@@ -322,6 +322,7 @@ export const services: Service[] = [
     summary: 'Weddings, decor, catering, photography and entertainment for your big day.',
     accent: 'amber',
     icon: 'party',
+    imageFocus: '30% 15%', // keeps the stylist (with headroom above her hair) + the decorated table in frame in every crop
     intro: [
       'From traditional weddings to birthdays and corporate functions, R&B connects you with planners, decorators, caterers, photographers and entertainers who make events memorable.',
       'Tell us the date, venue and style you have in mind. We introduce you to the right people and you agree the details directly with each one.',
@@ -692,6 +693,7 @@ export const services: Service[] = [
     summary: 'Long-term apartments, shops, offices and warehouses from local landlords.',
     accent: 'green',
     icon: 'key',
+    imageFocus: '50% 36%', // both faces + the documents stay in frame in the wide (16:10) crops
     intro: [
       'Looking for a home, a shop or an office for the long term? R&B connects you with local landlords and agents offering rentals and leases in Ghana and Canada.',
       'Share what you need, your budget and preferred area. We introduce you to matching landlords and you agree viewing, terms and lease details directly.',
@@ -714,6 +716,7 @@ export const services: Service[] = [
         tag: 'Apartment',
         offers: { ghana: gh(6500, 'Accra - East Legon', 'per month') },
         details: ['12-month lease', '2 beds', '2 baths'],
+        imageFocus: '15% 50%', // the man on the sofa is at the left of this photo
       },
       {
         id: 'kumasi-townhouse-lease',
@@ -722,6 +725,7 @@ export const services: Service[] = [
         tag: 'Townhouse',
         offers: { ghana: gh(5200, 'Kumasi - Santasi', 'per month') },
         details: ['12-month lease', '3 beds', '2 baths'],
+        imageFocus: '75% 40%', // keeps all three faces in the square phone thumbnail
       },
       {
         id: 'accra-shop-space',
@@ -738,6 +742,7 @@ export const services: Service[] = [
         tag: 'Office',
         offers: { canada: ca(1850, 'Toronto - Downtown', 'per month') },
         details: ['12-month lease', 'Up to 4 desks'],
+        imageFocus: '80% 45%',
       },
       {
         id: 'ottawa-co-living-room',
@@ -746,6 +751,7 @@ export const services: Service[] = [
         tag: 'Co-living',
         offers: { canada: ca(950, 'Ottawa - Sandy Hill', 'per month') },
         details: ['6-month lease', 'Utilities included'],
+        imageFocus: '42% 50%', // the room: window light, the couple and the bed
       },
       {
         id: 'calgary-warehouse',

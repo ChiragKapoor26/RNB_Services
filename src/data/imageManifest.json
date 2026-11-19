@@ -14,6 +14,10 @@
     "items": {},
     "hero": "hero.webp"
   },
+  "events": {
+    "items": {},
+    "hero": "hero.webp"
+  },
   "fixit-now": {
     "items": {},
     "hero": "hero.webp"
@@ -26,6 +30,17 @@
       "nissan-rogue-2016": "nissan-rogue-2016.webp",
       "toyota-corolla-2016": "toyota-corolla-2016.webp",
       "toyota-rav4-2017": "toyota-rav4-2017.webp"
+    },
+    "hero": "hero.webp"
+  },
+  "rent-and-lease": {
+    "items": {
+      "accra-apartment-lease": "accra-apartment-lease.webp",
+      "accra-shop-space": "accra-shop-space.webp",
+      "calgary-warehouse": "calgary-warehouse.webp",
+      "kumasi-townhouse-lease": "kumasi-townhouse-lease.webp",
+      "ottawa-co-living-room": "ottawa-co-living-room.webp",
+      "toronto-office": "toronto-office.webp"
     },
     "hero": "hero.webp"
   }

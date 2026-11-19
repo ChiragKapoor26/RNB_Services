@@ -45,7 +45,9 @@ for (const service of services) {
     const dest = `${name}.webp`
     await sharp(path.join(srcDir, file))
       .rotate() // respect EXIF orientation
-      .resize({ width: 1600, withoutEnlargement: true })
+      // 1200px is plenty: the biggest place a photo is shown is a service hero (~560 CSS px = ~1120 px on 2x
+      // screens) and it is the page's LCP image, so every extra KB slows that page's first load
+      .resize({ width: 1200, withoutEnlargement: true })
       .webp({ quality: 80 })
       .toFile(path.join(outDir, dest))
     converted++

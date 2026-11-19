@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **61 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **53 of 77** images are still missing.
 
 ## How to add photos
 
@@ -73,7 +73,7 @@ Drop files in `_assets/photos/events/`.  Search ideas: African wedding decor, tr
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
 | ⬜ | `wedding-planning.jpg` | Wedding planning |
 | ⬜ | `stage-backdrop-decor.jpg` | Stage & backdrop decor |
 | ⬜ | `balloon-floral-decor.jpg` | Balloon & floral decor |
@@ -143,13 +143,13 @@ Drop files in `_assets/photos/rent-and-lease/`.  Search ideas: apartment block A
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `accra-apartment-lease.jpg` | Two-bedroom apartment |
-| ⬜ | `kumasi-townhouse-lease.jpg` | Family townhouse |
-| ⬜ | `accra-shop-space.jpg` | Street-front shop space |
-| ⬜ | `toronto-office.jpg` | Private small office |
-| ⬜ | `ottawa-co-living-room.jpg` | Co-living room |
-| ⬜ | `calgary-warehouse.jpg` | Light-industrial warehouse |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `accra-apartment-lease.jpg` | Two-bedroom apartment |
+| ✅ | `kumasi-townhouse-lease.jpg` | Family townhouse |
+| ✅ | `accra-shop-space.jpg` | Street-front shop space |
+| ✅ | `toronto-office.jpg` | Private small office |
+| ✅ | `ottawa-co-living-room.jpg` | Co-living room |
+| ✅ | `calgary-warehouse.jpg` | Light-industrial warehouse |
 
 ## Rides & Parcels (`rides-and-parcels`)
 
