@@ -6,6 +6,7 @@ import { getLenis, scrollToHash, scrollToTop } from '@/lib/lenis'
 import { refreshScrollTriggers } from '@/lib/loadGsap'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { IntroSplash } from './IntroSplash'
 import { MobileEnquireButton } from './MobileEnquireButton'
 import { PageFallback } from './PageFallback'
 
@@ -57,6 +58,8 @@ export default function Layout() {
 
   return (
     <>
+      {/* first-visit brand intro (portals to <body>; renders nothing for deep links / reduced motion / repeat visits) */}
+      <IntroSplash />
       <a
         href="#main"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition-transform focus:translate-y-0"

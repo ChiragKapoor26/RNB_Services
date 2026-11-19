@@ -217,6 +217,376 @@ html.lenis body {
   display: none;
 }
 
+/* ==========================================================================================
+   Brand intro splash - ~2.9s on the first visit to Home (src/components/layout/IntroSplash.tsx)
+
+   Built to be cheap on the main thread (it shipped once with a visible Lighthouse TBT cost):
+   - every animation is transform / opacity only, so it runs on the compositor;
+   - elements REST in their final state and animate in with `backwards` fill, so each animation is
+     discarded when it ends (no lingering `forwards` layers / style entries);
+   - the Hero's soft glows are ONE static background on the root, not extra animated layers;
+   - no rounded overflow masks (they force a render surface every frame).
+   Everything is sized in `em` from .intro-root's font-size, so that single value scales the
+   composition from a 320px phone to a large desktop.
+
+   Timeline (seconds after the logos + fonts are ready):
+     0.08 - 0.9   the three app cards fan in (Driver, Seller, User - the same fan as the Hero)
+     0.75 - 1.7   the cards merge into the single R&B badge (+ a ring pulse)
+     0.8  - 1.65  the whole stack settles up to make room for the wordmark
+     1.1  - 1.95  "R", "&", "B" rise in, one by one
+     1.35 / 1.55  "SERVICES ONLINE" then the tagline fade up
+     0.2  - 2.2   a bar in the four brand colours fills across
+     2.2  - 2.5   the content + Skip button lift away first ...
+     2.45 - 2.9   ... then the paper fades, and the Hero's headline rises in underneath
+   ========================================================================================== */
+.intro-root {
+  position: fixed;
+  inset: 0;
+  z-index: 200; /* above the skip-link (100), header (50) and chat launcher (66) */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  /* the Hero's soft brand glows (royal, amber, taxi orange) as one static background, over the paper */
+  background:
+    radial-gradient(circle 21em at -7em calc(22% + 21em), rgb(47 95 224 / 0.16), transparent),
+    radial-gradient(circle 20em at calc(100% - 8em) 10em, rgb(239 178 50 / 0.32), transparent),
+    radial-gradient(circle 17em at calc(94% - 17em) calc(100% - 4em), rgb(223 109 46 / 0.15), transparent),
+    var(--color-paper);
+  color: var(--color-ink);
+  cursor: pointer;
+  touch-action: none;
+  overscroll-behavior: contain;
+  -webkit-tap-highlight-color: transparent;
+  /* width-led on phones, height-led on short / landscape screens (svh version overrides where supported) */
+  font-size: clamp(10px, min(3.5vw, 2.1vh), 22px);
+  font-size: clamp(10px, min(3.5vw, 2.1svh), 22px);
+}
+/* until the logos + fonts are in, show only the paper + glows; IntroSplash then adds .is-playing */
+.intro-root:not(.is-playing) > * {
+  visibility: hidden;
+}
+
+/* Hold the Hero's CSS entrance while the intro is up; IntroSplash releases it as the intro starts to fade */
+html[data-intro='playing'] .animate-rise {
+  animation-play-state: paused;
+}
+
+.intro-stack {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+.intro-settle {
+  display: grid;
+  justify-items: center;
+}
+
+/* ---- three apps -> one badge ---- */
+.intro-stage {
+  position: relative;
+  width: 19em;
+  height: 12.4em;
+}
+/* cards rest hidden (their animation also ends hidden: merged into the badge) */
+.intro-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8.6em;
+  height: auto;
+  aspect-ratio: 480 / 416;
+  object-fit: cover;
+  border-radius: 1.15em;
+  background: #fff;
+  box-shadow:
+    0 0 0 0.24em #10131c,
+    0 1.6em 2.4em -1em rgb(11 15 26 / 0.5);
+  opacity: 0;
+  transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--r));
+}
+.intro-ring,
+.intro-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4; /* above the cards (z 1-3) so they vanish *behind* the badge as it blooms */
+  width: 9.8em;
+  height: 9.8em;
+  margin: -4.9em 0 0 -4.9em;
+  border-radius: 50%;
+}
+.intro-ring {
+  border: 0.18em solid var(--color-royal);
+  opacity: 0;
+}
+.intro-badge {
+  background: #fff;
+  box-shadow:
+    0 0 0 0.24em var(--color-royal),
+    0 1.6em 3em -1em rgb(47 95 224 / 0.55);
+}
+/* rounded on the image itself - no overflow mask */
+.intro-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ---- wordmark ---- */
+.intro-wordmark {
+  display: flex;
+  justify-content: center;
+  margin: 0.3em 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 5.4em;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+/* each letter rises out of its own rectangular mask (padding keeps italics / descenders from being cut) */
+.intro-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.04em 0.05em 0.1em;
+}
+.intro-letter {
+  display: inline-block;
+}
+.intro-amp {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-royal);
+}
+.intro-name {
+  margin: 0.5em 0 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: max(11px, 0.95em);
+  letter-spacing: 0.34em;
+  text-indent: 0.34em; /* balances the trailing letter-spacing so the line is optically centred */
+  text-transform: uppercase;
+  color: var(--color-royal);
+}
+.intro-bar {
+  width: 15em;
+  height: 0.22em;
+  margin-top: 1.9em;
+  border-radius: 99px;
+  overflow: hidden;
+  background: rgb(11 15 26 / 0.08);
+}
+/* the four brand colours: royal, taxi orange, amber, forest; scaled (not clipped) so it stays on the compositor */
+.intro-bar > span {
+  display: block;
+  height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--color-royal), var(--color-taxi), var(--color-sun), var(--color-forest));
+}
+.intro-tagline {
+  margin: 1.1em 0 0;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: max(12px, 1em);
+  color: var(--color-muted);
+}
+
+.intro-skip {
+  position: absolute;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  height: 44px;
+  padding: 0 1.1rem;
+  border: 1px solid rgb(11 15 26 / 0.14);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.85);
+  color: var(--color-ink);
+  font: 600 14px/1 var(--font-sans);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.intro-skip:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+/* ---- the timeline: only runs once IntroSplash adds .is-playing ----
+   `backwards` = the animation's first keyframe applies during its delay, and nothing lingers afterwards. */
+.is-playing .intro-card {
+  animation: intro-card 1.3s cubic-bezier(0.22, 1, 0.36, 1); /* per-card delay is set inline */
+}
+.is-playing .intro-badge {
+  animation: intro-badge 1s cubic-bezier(0.3, 0.7, 0.3, 1) 0.62s backwards;
+}
+.is-playing .intro-ring {
+  animation: intro-ring 0.9s cubic-bezier(0.2, 0.6, 0.3, 1) 1s;
+}
+.is-playing .intro-settle {
+  animation: intro-settle 0.85s cubic-bezier(0.65, 0, 0.35, 1) 0.8s backwards;
+}
+.is-playing .intro-letter {
+  animation: intro-letter 0.75s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(1.1s + var(--i) * 0.09s);
+}
+.is-playing .intro-name {
+  animation: intro-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.35s backwards;
+}
+.is-playing .intro-tagline {
+  animation: intro-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.55s backwards;
+}
+.is-playing .intro-bar {
+  animation: intro-fade 0.4s ease-out 0.1s backwards;
+}
+.is-playing .intro-bar > span {
+  animation: intro-bar 2s linear 0.2s backwards;
+}
+.is-playing .intro-skip {
+  /* fades in early, and leaves with the content so it never lingers over the Hero's header */
+  animation:
+    intro-fade 0.4s ease-out 0.4s backwards,
+    intro-fade-out 0.25s ease-in 2.2s forwards;
+}
+/* exit: the content lifts away first, then the paper fades - so the logo never ghosts over the Hero text */
+.is-playing .intro-stack {
+  animation: intro-out 0.3s cubic-bezier(0.4, 0, 1, 1) 2.2s forwards;
+}
+.is-playing.intro-root {
+  animation: intro-exit 0.45s ease-in-out 2.45s forwards;
+}
+/* skip: a quick fade instead of a hard cut (new animation names, so they restart from 0 mid-timeline) */
+.is-skipping .intro-stack {
+  animation: intro-out-fast 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+.is-skipping.intro-root {
+  animation: intro-skip 0.3s ease-in forwards;
+}
+
+@keyframes intro-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.9em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes intro-letter {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes intro-settle {
+  from {
+    transform: translateY(6em);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes intro-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes intro-ring {
+  from {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+@keyframes intro-badge {
+  0%,
+  30% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.09);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* enter (0-34%) with a slight overshoot, hold, then merge into the centre (58-100%) */
+@keyframes intro-card {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--x), calc(var(--y) + 3.6em)) rotate(calc(var(--r) * 2)) scale(0.7);
+  }
+  34% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--r)) scale(1.04);
+  }
+  44%,
+  58% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--r)) scale(1);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(0em, 0.3em) rotate(0deg) scale(0.5);
+  }
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+}
+@keyframes intro-out-fast {
+  to {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+@keyframes intro-exit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes intro-skip {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 /* Respect reduced motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   *,
