@@ -15,7 +15,14 @@
     "hero": "hero.webp"
   },
   "events": {
-    "items": {},
+    "items": {
+      "balloon-floral-decor": "balloon-floral-decor.webp",
+      "catering-coordination": "catering-coordination.webp",
+      "photography-video": "photography-video.webp",
+      "sound-dj-mc": "sound-dj-mc.webp",
+      "stage-backdrop-decor": "stage-backdrop-decor.webp",
+      "wedding-planning": "wedding-planning.webp"
+    },
     "hero": "hero.webp"
   },
   "fixit-now": {

@@ -341,6 +341,7 @@ export const services: Service[] = [
         tag: 'Planning',
         offers: { ghana: gh(5500, 'Accra', 'per event'), canada: ca(2100, 'Toronto', 'per event') },
         details: ['Full or partial', 'Day-of coordination'],
+        imageFocus: '50% 6%', // tall photo: keep both faces (with headroom) in a landscape card
       },
       {
         id: 'stage-backdrop-decor',
@@ -373,6 +374,7 @@ export const services: Service[] = [
         tag: 'Media',
         offers: { ghana: gh(2100, 'Accra', 'per event'), canada: ca(780, 'Ottawa', 'per event') },
         details: ['Photo & film', 'Edited gallery'],
+        imageFocus: '10% 50%', // the photographer is at the left of this photo
       },
       {
         id: 'sound-dj-mc',

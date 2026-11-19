@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **53 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **47 of 77** images are still missing.
 
 ## How to add photos
 
@@ -74,12 +74,12 @@ Drop files in `_assets/photos/events/`.  Search ideas: African wedding decor, tr
 | Done | File name | For |
 |---|---|---|
 | ✅ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `wedding-planning.jpg` | Wedding planning |
-| ⬜ | `stage-backdrop-decor.jpg` | Stage & backdrop decor |
-| ⬜ | `balloon-floral-decor.jpg` | Balloon & floral decor |
-| ⬜ | `catering-coordination.jpg` | Catering coordination |
-| ⬜ | `photography-video.jpg` | Photography & video |
-| ⬜ | `sound-dj-mc.jpg` | Sound, DJ & MC |
+| ✅ | `wedding-planning.jpg` | Wedding planning |
+| ✅ | `stage-backdrop-decor.jpg` | Stage & backdrop decor |
+| ✅ | `balloon-floral-decor.jpg` | Balloon & floral decor |
+| ✅ | `catering-coordination.jpg` | Catering coordination |
+| ✅ | `photography-video.jpg` | Photography & video |
+| ✅ | `sound-dj-mc.jpg` | Sound, DJ & MC |
 
 ## Property Booking (`property-booking`)
 
