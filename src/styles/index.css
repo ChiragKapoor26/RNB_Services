@@ -236,7 +236,7 @@ html.lenis body {
      1.1  - 1.95  "R", "&", "B" rise in, one by one
      1.35 / 1.55  "SERVICES ONLINE" then the tagline fade up
      0.2  - 2.2   a bar in the four brand colours fills across
-     2.2  - 2.5   the content + Skip button lift away first ...
+     2.2  - 2.5   the content lifts away first ...
      2.45 - 2.9   ... then the paper fades, and the Hero's headline rises in underneath
    ========================================================================================== */
 .intro-root {
@@ -393,27 +393,6 @@ html[data-intro='playing'] .animate-rise {
   color: var(--color-muted);
 }
 
-.intro-skip {
-  position: absolute;
-  top: max(1rem, env(safe-area-inset-top));
-  right: max(1rem, env(safe-area-inset-right));
-  height: 44px;
-  padding: 0 1.1rem;
-  border: 1px solid rgb(11 15 26 / 0.14);
-  border-radius: 999px;
-  background: rgb(255 255 255 / 0.85);
-  color: var(--color-ink);
-  font: 600 14px/1 var(--font-sans);
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s;
-}
-.intro-skip:hover {
-  background: var(--color-ink);
-  color: #fff;
-}
-
 /* ---- the timeline: only runs once IntroSplash adds .is-playing ----
    `backwards` = the animation's first keyframe applies during its delay, and nothing lingers afterwards. */
 .is-playing .intro-card {
@@ -444,12 +423,6 @@ html[data-intro='playing'] .animate-rise {
 .is-playing .intro-bar > span {
   animation: intro-bar 2s linear 0.2s backwards;
 }
-.is-playing .intro-skip {
-  /* fades in early, and leaves with the content so it never lingers over the Hero's header */
-  animation:
-    intro-fade 0.4s ease-out 0.4s backwards,
-    intro-fade-out 0.25s ease-in 2.2s forwards;
-}
 /* exit: the content lifts away first, then the paper fades - so the logo never ghosts over the Hero text */
 .is-playing .intro-stack {
   animation: intro-out 0.3s cubic-bezier(0.4, 0, 1, 1) 2.2s forwards;
@@ -471,11 +444,6 @@ html[data-intro='playing'] .animate-rise {
   }
   to {
     opacity: 1;
-  }
-}
-@keyframes intro-fade-out {
-  to {
-    opacity: 0;
   }
 }
 @keyframes intro-rise {

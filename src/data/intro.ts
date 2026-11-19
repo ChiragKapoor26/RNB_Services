@@ -16,7 +16,4 @@ export const intro = {
   oncePerSession: true,
   /** Longest we hold the start for the logos + fonts to arrive (ms). After this it plays regardless. */
   maxAssetWaitMs: 1200,
-  /** Read out to screen-reader users in place of the (decorative) animation. */
-  label: 'Welcome to R&B Services Online',
-  skip: 'Skip intro',
 }

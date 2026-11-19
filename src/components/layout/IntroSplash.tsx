@@ -20,12 +20,12 @@ import { cn } from '@/lib/cn'
  * Good-citizen rules:
  *  - Home only, once per session (see data/intro.ts); never for deep links like /#faq or /services/...
  *  - Never for visitors who prefer reduced motion.
- *  - Skippable: button, tap/click anywhere, or Esc. Screen readers get a short label, not the animation.
- *  - Keyboard focus is trapped on the Skip button while it is up (aria-modal covers screen readers).
- *    We deliberately do NOT mark #root `inert`: toggling it on the whole mounted page cost ~60ms each
- *    way on a throttled phone (a long task each time) - too much for a 3 second decorative overlay.
+ *  - Skippable by tap/click anywhere or Esc. There is deliberately no visible Skip button.
+ *  - Purely decorative: hidden from assistive tech (aria-hidden) with nothing focusable inside, so
+ *    screen-reader and keyboard users are never held up. We also do NOT mark #root `inert`: toggling it
+ *    on the whole mounted page cost ~60ms each way on a throttled phone (a long task each time).
  *  - It can never leave the page covered: a failsafe timer removes it whatever happens.
- *  - It is decorative, so it can never take the site down: an error boundary swallows any failure.
+ *  - It is non-essential, so it can never take the site down: an error boundary swallows any failure.
  */
 
 const SEEN_KEY = 'rnb-intro-seen'
@@ -90,7 +90,6 @@ function IntroGate() {
 
 function Splash({ onDone }: { onDone: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null)
-  const skipRef = useRef<HTMLButtonElement>(null)
   const [ready, setReady] = useState(false) // logos + fonts are in -> start the timeline
   const [skipping, setSkipping] = useState(false)
   const skip = useCallback(() => setSkipping(true), [])
@@ -103,7 +102,7 @@ function Splash({ onDone }: { onDone: () => void }) {
     return () => document.documentElement.removeAttribute('data-intro')
   }, [])
 
-  // While it is up: keep the page behind it still, trap focus on Skip, allow Esc, and guarantee clean-up.
+  // While it is up: keep the page behind it still, allow Esc to skip, and guarantee clean-up.
   useEffect(() => {
     const el = rootRef.current
     const stopWheel = (e: Event) => {
@@ -130,11 +129,6 @@ function Splash({ onDone }: { onDone: () => void }) {
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSkipping(true)
-      if (e.key === 'Tab') {
-        // the Skip button is the only thing that may take focus - nothing behind the overlay can
-        e.preventDefault()
-        skipRef.current?.focus()
-      }
     }
     window.addEventListener('keydown', onKey)
 
@@ -187,13 +181,11 @@ function Splash({ onDone }: { onDone: () => void }) {
   return createPortal(
     <div
       ref={rootRef}
-      role="dialog"
-      aria-modal="true"
-      aria-label={intro.label}
+      aria-hidden="true"
       className={cn('intro-root', ready && 'is-playing', skipping && 'is-skipping')}
       onClick={skip}
     >
-      <div className="intro-stack" aria-hidden="true">
+      <div className="intro-stack">
         <div className="intro-settle">
           {/* three apps fan in, then merge into the one R&B badge */}
           <div className="intro-stage">
@@ -235,10 +227,6 @@ function Splash({ onDone }: { onDone: () => void }) {
           <p className="intro-tagline">{tagline}</p>
         </div>
       </div>
-
-      <button ref={skipRef} type="button" className="intro-skip" onClick={skip}>
-        {intro.skip}
-      </button>
     </div>,
     document.body,
   )
