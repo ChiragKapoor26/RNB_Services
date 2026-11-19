@@ -1,4 +1,26 @@
 {
+  "building-supplies": {
+    "items": {
+      "cement-50kg": "cement-50kg.webp",
+      "electrical-wiring-kit": "electrical-wiring-kit.webp",
+      "paint-20l": "paint-20l.webp",
+      "plumbing-fittings": "plumbing-fittings.webp",
+      "power-drill-set": "power-drill-set.webp",
+      "roofing-sheets": "roofing-sheets.webp"
+    },
+    "hero": "hero.webp"
+  },
+  "professional-services": {
+    "items": {
+      "accountant-tax": "accountant-tax.webp",
+      "architect-drafting": "architect-drafting.webp",
+      "business-registration": "business-registration.webp",
+      "immigration-documentation": "immigration-documentation.webp",
+      "legal-consultation": "legal-consultation.webp",
+      "web-it-support": "web-it-support.webp"
+    },
+    "hero": "hero.webp"
+  },
   "health-wellness": {
     "items": {
       "gp-telehealth": "gp-telehealth.webp",
@@ -27,6 +49,17 @@
   },
   "fixit-now": {
     "items": {},
+    "hero": "hero.webp"
+  },
+  "good-to-eat": {
+    "items": {
+      "banku-tilapia": "banku-tilapia.webp",
+      "jollof-grilled-chicken": "jollof-grilled-chicken.webp",
+      "kelewele": "kelewele.webp",
+      "poutine": "poutine.webp",
+      "suya-skewers": "suya-skewers.webp",
+      "waakye": "waakye.webp"
+    },
     "hero": "hero.webp"
   },
   "buy-any-car": {

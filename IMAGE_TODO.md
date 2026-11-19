@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **47 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **26 of 77** images are still missing.
 
 ## How to add photos
 
@@ -17,13 +17,13 @@ Drop files in `_assets/photos/building-supplies/`.  Search ideas: African carpen
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `cement-50kg.jpg` | Cement (50kg bag) |
-| ⬜ | `roofing-sheets.jpg` | Roofing sheets |
-| ⬜ | `power-drill-set.jpg` | Power drill set |
-| ⬜ | `paint-20l.jpg` | Paint (20L) |
-| ⬜ | `plumbing-fittings.jpg` | Plumbing pipes & fittings |
-| ⬜ | `electrical-wiring-kit.jpg` | Electrical wiring kit |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `cement-50kg.jpg` | Cement (50kg bag) |
+| ✅ | `roofing-sheets.jpg` | Roofing sheets |
+| ✅ | `power-drill-set.jpg` | Power drill set |
+| ✅ | `paint-20l.jpg` | Paint (20L) |
+| ✅ | `plumbing-fittings.jpg` | Plumbing pipes & fittings |
+| ✅ | `electrical-wiring-kit.jpg` | Electrical wiring kit |
 
 ## Professional Services (`professional-services`)
 
@@ -31,13 +31,13 @@ Drop files in `_assets/photos/professional-services/`.  Search ideas: Black acco
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `accountant-tax.jpg` | Accountant & tax filing |
-| ⬜ | `legal-consultation.jpg` | Legal consultation |
-| ⬜ | `web-it-support.jpg` | Web & IT support |
-| ⬜ | `business-registration.jpg` | Business registration consultant |
-| ⬜ | `architect-drafting.jpg` | Architect & drafting |
-| ⬜ | `immigration-documentation.jpg` | Immigration & documentation help |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `accountant-tax.jpg` | Accountant & tax filing |
+| ✅ | `legal-consultation.jpg` | Legal consultation |
+| ✅ | `web-it-support.jpg` | Web & IT support |
+| ✅ | `business-registration.jpg` | Business registration consultant |
+| ✅ | `architect-drafting.jpg` | Architect & drafting |
+| ✅ | `immigration-documentation.jpg` | Immigration & documentation help |
 
 ## Health & Wellness (`health-wellness`)
 
@@ -115,13 +115,13 @@ Drop files in `_assets/photos/good-to-eat/`.  Search ideas: jollof rice, waakye,
 
 | Done | File name | For |
 |---|---|---|
-| ⬜ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `jollof-grilled-chicken.jpg` | Jollof rice & grilled chicken |
-| ⬜ | `waakye.jpg` | Waakye |
-| ⬜ | `banku-tilapia.jpg` | Banku & tilapia |
-| ⬜ | `kelewele.jpg` | Kelewele |
-| ⬜ | `poutine.jpg` | Poutine |
-| ⬜ | `suya-skewers.jpg` | Suya skewers |
+| ✅ | `hero.jpg` | Hero image for the service page / home grid |
+| ✅ | `jollof-grilled-chicken.jpg` | Jollof rice & grilled chicken |
+| ✅ | `waakye.jpg` | Waakye |
+| ✅ | `banku-tilapia.jpg` | Banku & tilapia |
+| ✅ | `kelewele.jpg` | Kelewele |
+| ✅ | `poutine.jpg` | Poutine |
+| ✅ | `suya-skewers.jpg` | Suya skewers |
 
 ## Buy Any Car (`buy-any-car`)
 

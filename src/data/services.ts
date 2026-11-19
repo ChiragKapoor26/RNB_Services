@@ -26,6 +26,7 @@ export const services: Service[] = [
     summary: 'Cement, roofing, tools, paint and fittings from suppliers near your site.',
     accent: 'amber',
     icon: 'hardhat',
+    imageFocus: '50% 0%', // top-aligned: his head is only ~3% from the top of this photo, so the wide (16:10) crops must not trim the top
     intro: [
       'Building or renovating should not mean driving across town comparing prices. R&B connects you with trusted local suppliers of cement, roofing, tools, paint, plumbing and electrical materials in Ghana and Canada.',
       'Tell us what you need and where your site is. We introduce you to nearby suppliers so you can confirm stock, price and delivery directly with them.',
@@ -44,6 +45,7 @@ export const services: Service[] = [
         tag: 'Materials',
         offers: { ghana: gh(95, 'Accra', 'per bag'), canada: ca(19, 'Toronto', 'per bag') },
         details: ['50kg bag', 'Bulk pricing on request'],
+        imageFocus: '50% 30%', // tall photo: keeps the "Empire Cement" title banner + crest in the wide card (and the full label in the square phone thumbnail)
       },
       {
         id: 'roofing-sheets',
@@ -118,6 +120,7 @@ export const services: Service[] = [
         tag: 'Finance',
         offers: { ghana: gh(450, 'Accra', 'per filing'), canada: ca(129, 'Toronto', 'per filing') },
         details: ['Individuals & SMEs', 'Annual returns'],
+        imageFocus: '70% 50%', // the advisor's face + the document he is holding (the client's blurred head is at the left)
       },
       {
         id: 'legal-consultation',
@@ -126,6 +129,7 @@ export const services: Service[] = [
         tag: 'Legal',
         offers: { ghana: gh(380, 'Accra', 'per 30 min'), canada: ca(150, 'Ottawa', 'per 30 min') },
         details: ['Initial consultation', 'In person or online'],
+        imageFocus: '15% 50%', // keeps the gavel + scales (at the left of this photo) in the square phone thumbnail
       },
       {
         id: 'web-it-support',
@@ -142,6 +146,7 @@ export const services: Service[] = [
         tag: 'Business',
         offers: { ghana: gh(950, 'Accra', 'package'), canada: ca(320, 'Toronto', 'package') },
         details: ['Registration paperwork', 'Tax set-up guidance'],
+        imageFocus: '65% 50%', // both faces stay in frame in the square phone thumbnail
       },
       {
         id: 'architect-drafting',
@@ -540,6 +545,7 @@ export const services: Service[] = [
     summary: 'Local favourites from restaurants and home-chefs near you.',
     accent: 'green',
     icon: 'utensils',
+    imageFocus: '35% 40%', // keeps as many of the four friends' faces in frame as the narrower crops allow
     intro: [
       'From smoky jollof to crispy poutine, Good to Eat connects you with restaurants and home-chef kitchens serving the dishes you crave in Ghana and Canada.',
       'Pick a dish and your area. We introduce you to a nearby vendor and you confirm the menu, price and pick-up or delivery directly.',
