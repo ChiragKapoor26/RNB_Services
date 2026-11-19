@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **74 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **68 of 77** images are still missing.
 
 ## How to add photos
 
@@ -46,12 +46,12 @@ Drop files in `_assets/photos/health-wellness/`.  Search ideas: Black woman doct
 | Done | File name | For |
 |---|---|---|
 | ✅ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `gp-telehealth.jpg` | GP / telehealth consultation |
-| ⬜ | `physiotherapy.jpg` | Physiotherapy |
-| ⬜ | `massage-therapy.jpg` | Massage therapy |
-| ⬜ | `nutrition-coaching.jpg` | Nutrition coaching |
-| ⬜ | `mental-wellness-counselling.jpg` | Mental-wellness counselling |
-| ⬜ | `home-nursing.jpg` | Home nursing care |
+| ✅ | `gp-telehealth.jpg` | GP / telehealth consultation |
+| ✅ | `physiotherapy.jpg` | Physiotherapy |
+| ✅ | `massage-therapy.jpg` | Massage therapy |
+| ✅ | `nutrition-coaching.jpg` | Nutrition coaching |
+| ✅ | `mental-wellness-counselling.jpg` | Mental-wellness counselling |
+| ✅ | `home-nursing.jpg` | Home nursing care |
 
 ## Artisan & Carpenter (`artisan-carpenter`)
 

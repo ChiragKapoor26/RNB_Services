@@ -48,6 +48,7 @@ export function ItemCard({ service, item, country, index }: Props) {
             icon={service.icon}
             width={640}
             height={480}
+            focus={item.imageFocus}
           />
           <span className="absolute left-3 top-3 hidden rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-ink shadow-sm backdrop-blur md:block">
             {item.tag}

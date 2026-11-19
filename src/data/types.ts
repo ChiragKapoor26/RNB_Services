@@ -46,6 +46,8 @@ export interface ServiceItem {
   details?: string[]
   /** Generic, non-personal vendor descriptor for food/sample vendors */
   vendor?: string
+  /** CSS object-position for this item's photo, so both the 4:3 card and the square phone thumbnail keep the subject in frame (e.g. '50% 15%') */
+  imageFocus?: string
 }
 
 export interface HowStep {

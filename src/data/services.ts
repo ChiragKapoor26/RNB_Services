@@ -193,6 +193,7 @@ export const services: Service[] = [
         tag: 'Consultation',
         offers: { ghana: gh(220, 'Accra', 'per consult'), canada: ca(65, 'Toronto', 'per consult') },
         details: ['Video or phone', 'Registered GPs'],
+        imageFocus: '47% 50%',
       },
       {
         id: 'physiotherapy',
@@ -201,6 +202,7 @@ export const services: Service[] = [
         tag: 'Rehab',
         offers: { ghana: gh(320, 'Kumasi', 'per session'), canada: ca(110, 'Ottawa', 'per session') },
         details: ['Clinic or home visit', 'Injury & recovery'],
+        imageFocus: '50% 15%', // tall photo: keep the therapist's face + the leg stretch in a landscape card
       },
       {
         id: 'massage-therapy',
@@ -209,6 +211,7 @@ export const services: Service[] = [
         tag: 'Wellness',
         offers: { ghana: gh(260, 'Accra', 'per hour'), canada: ca(98, 'Calgary', 'per hour') },
         details: ['60-minute sessions', 'Clinic or mobile'],
+        imageFocus: '12% 50%',
       },
       {
         id: 'nutrition-coaching',
@@ -217,6 +220,7 @@ export const services: Service[] = [
         tag: 'Nutrition',
         offers: { ghana: gh(290, 'Accra', 'per session'), canada: ca(95, 'Toronto', 'per session') },
         details: ['Personalised plan', 'Online or in person'],
+        imageFocus: '85% 50%',
       },
       {
         id: 'mental-wellness-counselling',
@@ -225,6 +229,7 @@ export const services: Service[] = [
         tag: 'Counselling',
         offers: { ghana: gh(350, 'Takoradi', 'per session'), canada: ca(135, 'Ottawa', 'per session') },
         details: ['Confidential', 'Online or in person'],
+        imageFocus: '40% 40%',
       },
       {
         id: 'home-nursing',
@@ -233,6 +238,7 @@ export const services: Service[] = [
         tag: 'Home care',
         offers: { ghana: gh(480, 'Accra', 'per visit'), canada: ca(90, 'Toronto', 'per hour') },
         details: ['Qualified nurses', 'Visit or longer shifts'],
+        imageFocus: '45% 40%',
       },
     ],
   },

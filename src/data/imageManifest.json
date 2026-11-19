@@ -1,6 +1,13 @@
 {
   "health-wellness": {
-    "items": {},
+    "items": {
+      "gp-telehealth": "gp-telehealth.webp",
+      "home-nursing": "home-nursing.webp",
+      "massage-therapy": "massage-therapy.webp",
+      "mental-wellness-counselling": "mental-wellness-counselling.webp",
+      "nutrition-coaching": "nutrition-coaching.webp",
+      "physiotherapy": "physiotherapy.webp"
+    },
     "hero": "hero.webp"
   },
   "artisan-carpenter": {
