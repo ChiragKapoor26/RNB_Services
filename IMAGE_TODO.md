@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **26 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **20 of 77** images are still missing.
 
 ## How to add photos
 
@@ -102,12 +102,12 @@ Drop files in `_assets/photos/fixit-now/`.  Search ideas: Black plumber, electri
 | Done | File name | For |
 |---|---|---|
 | ✅ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `plumber.jpg` | Plumber |
-| ⬜ | `electrician.jpg` | Electrician |
-| ⬜ | `ac-fridge-repair.jpg` | AC & fridge repair |
-| ⬜ | `phone-laptop-repair.jpg` | Phone & laptop repair |
-| ⬜ | `auto-mechanic-mobile.jpg` | Auto mechanic (mobile) |
-| ⬜ | `appliance-repair.jpg` | Appliance repair |
+| ✅ | `plumber.jpg` | Plumber |
+| ✅ | `electrician.jpg` | Electrician |
+| ✅ | `ac-fridge-repair.jpg` | AC & fridge repair |
+| ✅ | `phone-laptop-repair.jpg` | Phone & laptop repair |
+| ✅ | `auto-mechanic-mobile.jpg` | Auto mechanic (mobile) |
+| ✅ | `appliance-repair.jpg` | Appliance repair |
 
 ## Good to Eat (`good-to-eat`)
 

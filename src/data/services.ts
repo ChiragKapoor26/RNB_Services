@@ -491,6 +491,7 @@ export const services: Service[] = [
         title: 'Plumber',
         description: 'Leaks, blocked drains, taps, toilets and water-heater fixes.',
         tag: 'Plumbing',
+        imageFocus: '42% 50%', // the sink trap + his face and hands (wide photo) stay in the square phone thumbnail
         offers: { ghana: gh(150, 'Accra', 'call-out'), canada: ca(95, 'Toronto', 'call-out') },
         details: ['Emergency call-outs', 'Residential & small commercial'],
       },
@@ -499,6 +500,7 @@ export const services: Service[] = [
         title: 'Electrician',
         description: 'Faults, rewiring, sockets, lighting and consumer-unit repairs.',
         tag: 'Electrical',
+        imageFocus: '40% 20%', // keeps the hard hat (with headroom) + his face and the screwdriver hand in frame
         offers: { ghana: gh(180, 'Kumasi', 'call-out'), canada: ca(110, 'Ottawa', 'call-out') },
         details: ['Fault finding', 'Safe, tidy work'],
       },
@@ -507,6 +509,7 @@ export const services: Service[] = [
         title: 'AC & fridge repair',
         description: 'Servicing, gas top-ups and repairs for air conditioners, fridges and freezers.',
         tag: 'Cooling',
+        imageFocus: '45% 40%', // his smile + the screwdriver at the AC panel (they are far apart in the square thumbnail)
         offers: { ghana: gh(260, 'Accra', 'per visit'), canada: ca(125, 'Calgary', 'per visit') },
         details: ['Servicing & gas', 'Home & shop units'],
       },
@@ -515,6 +518,7 @@ export const services: Service[] = [
         title: 'Phone & laptop repair',
         description: 'Cracked screens, batteries, charging ports and software issues.',
         tag: 'Devices',
+        imageFocus: '30% 50%', // the open circuit board + tweezers (the screwdriver at the right is the part cropped in the square thumbnail)
         offers: { ghana: gh(120, 'Takoradi', 'diagnosis'), canada: ca(70, 'Toronto', 'diagnosis') },
         details: ['Screens & batteries', 'Same-day options'],
       },
@@ -523,6 +527,7 @@ export const services: Service[] = [
         title: 'Auto mechanic (mobile)',
         description: 'A mechanic comes to you for diagnostics, servicing and common repairs.',
         tag: 'Vehicles',
+        imageFocus: '47% 50%', // his face + the wrench above him, centred
         offers: { ghana: gh(320, 'Accra', 'call-out'), canada: ca(125, 'Ottawa', 'call-out') },
         details: ['Mobile service', 'Diagnostics & servicing'],
       },
@@ -531,6 +536,7 @@ export const services: Service[] = [
         title: 'Appliance repair',
         description: 'Washing machines, cookers, microwaves, TVs and other household appliances.',
         tag: 'Appliances',
+        imageFocus: '70% 50%', // the washer drum + his face and the control panel he is pointing at (wide photo)
         offers: { ghana: gh(200, 'Kumasi', 'per visit'), canada: ca(100, 'Calgary', 'per visit') },
         details: ['Washers, cookers, TVs', 'Parts sourced locally'],
       },

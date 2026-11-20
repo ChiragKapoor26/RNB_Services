@@ -48,7 +48,14 @@
     "hero": "hero.webp"
   },
   "fixit-now": {
-    "items": {},
+    "items": {
+      "ac-fridge-repair": "ac-fridge-repair.webp",
+      "appliance-repair": "appliance-repair.webp",
+      "auto-mechanic-mobile": "auto-mechanic-mobile.webp",
+      "electrician": "electrician.webp",
+      "phone-laptop-repair": "phone-laptop-repair.webp",
+      "plumber": "plumber.webp"
+    },
     "hero": "hero.webp"
   },
   "good-to-eat": {
