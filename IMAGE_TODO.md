@@ -1,6 +1,6 @@
 # IMAGE TODO
 
-Until photos are supplied, the site shows clean branded placeholders. **20 of 77** images are still missing.
+Until photos are supplied, the site shows clean branded placeholders. **14 of 77** images are still missing.
 
 ## How to add photos
 
@@ -60,12 +60,12 @@ Drop files in `_assets/photos/artisan-carpenter/`.  Search ideas: African carpen
 | Done | File name | For |
 |---|---|---|
 | ✅ | `hero.jpg` | Hero image for the service page / home grid |
-| ⬜ | `custom-furniture.jpg` | Custom furniture |
-| ⬜ | `door-window-fitting.jpg` | Door & window fitting |
-| ⬜ | `kitchen-cabinets.jpg` | Kitchen cabinets |
-| ⬜ | `tiling-flooring.jpg` | Tiling & flooring |
-| ⬜ | `painting-plastering.jpg` | Painting & plastering |
-| ⬜ | `welding-metal-gates.jpg` | Welding & metal gates |
+| ✅ | `custom-furniture.jpg` | Custom furniture |
+| ✅ | `door-window-fitting.jpg` | Door & window fitting |
+| ✅ | `kitchen-cabinets.jpg` | Kitchen cabinets |
+| ✅ | `tiling-flooring.jpg` | Tiling & flooring |
+| ✅ | `painting-plastering.jpg` | Painting & plastering |
+| ✅ | `welding-metal-gates.jpg` | Welding & metal gates |
 
 ## Event Decor & Event Planning (`events`)
 

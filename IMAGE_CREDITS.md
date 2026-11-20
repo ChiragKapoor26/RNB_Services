@@ -14,7 +14,7 @@ Every image used on the site must be listed here with its source and licence.
 
 ## Photos
 
-Hero photos supplied for nine services (FixIt Now, Health & Wellness, Artisan & Carpenter, Buy Any Car, Rent & Lease, Event Decor & Event Planning, Good to Eat, Professional Services, Building Supplies & Home Hardware), plus listing photos for all six FixIt Now items, all six Health & Wellness items, all six Buy Any Car items, all six Rent & Lease items, all six Events items, all six Good to Eat items, all six Professional Services items and all six Building Supplies items (every other service's cards still show branded placeholders - see `IMAGE_TODO.md`).
+Hero photos supplied for nine services (FixIt Now, Health & Wellness, Artisan & Carpenter, Buy Any Car, Rent & Lease, Event Decor & Event Planning, Good to Eat, Professional Services, Building Supplies & Home Hardware), plus listing photos for all six Artisan & Carpenter items, all six FixIt Now items, all six Health & Wellness items, all six Buy Any Car items, all six Rent & Lease items, all six Events items, all six Good to Eat items, all six Professional Services items and all six Building Supplies items (every other service's cards still show branded placeholders - see `IMAGE_TODO.md`).
 
 > **⚠ Licence check needed before launch.** Nearly all of these files look like **watermarked preview images from stock-photo sites**
 > (the carpenter, Buy Any Car and Good to Eat heroes clearly show tiled "Vecteezy" watermarks; the plumber photo has a faint watermark too).
@@ -60,12 +60,19 @@ Hero photos supplied for nine services (FixIt Now, Health & Wellness, Artisan & 
 > an AI-generated or stock image, and `auto-mechanic-mobile` and `phone-laptop-repair` show no watermark; the source of all six
 > is unknown. Five of the six show an identifiable person, so confirm the licence and consent, or replace them.
 >
+> The six Artisan & Carpenter listing photos are mixed: `painting-plastering` and `kitchen-cabinets` carry faint repeating
+> stock-site watermarks (the kitchen one shows a partly legible "dr..." mark, so it looks like Dreamstime), `custom-furniture`
+> looks AI-generated (a rendered carved figure and chair, so it is not a real workshop's work and must not be passed off as one),
+> and `welding-metal-gates`, `tiling-flooring` and `door-window-fitting` show no obvious watermark; the source of all six is
+> unknown. Four of the six show an identifiable person, so confirm the licence and consent, or replace them.
+>
 > Sizes: the Rent & Lease hero is only 239 x 192 px, the nurses hero 220 x 148 px and the `power-drill-set` listing photo
 > 225 x 225 px (all three are shown 1.5-2.5x larger than that, so they look soft - replace these first). The Professional Services
 > hero is 525 x 350 px (about 1.3x enlarged in the desktop hero spot), the Buy Any Car and Good to Eat heroes are 678 x 452 px and
 > the Building Supplies hero is 800 x 533 px (sharp on standard screens). The other listing photos are 400-611 px (Health &
 > Wellness), 494-700 px (cars), 540-693 px (Rent & Lease), 468-738 px (Events), 440-738 px (Good to Eat), 547-678 px (Professional
-> Services) and 451-680 px (Building Supplies) wide. The FixIt Now listing photos are 539-678 px wide. Everything looks soft on high-density (retina) screens. Listing cards need
+> Services) and 451-680 px (Building Supplies) wide. The FixIt Now listing photos are 539-678 px wide. The Artisan & Carpenter listing photos are 365-678 px wide (`welding-metal-gates`
+> is a portrait photo only 365 x 547 px, so it is the softest and is cropped hardest in the landscape card). Everything looks soft on high-density (retina) screens. Listing cards need
 > roughly 700 px or more of width to stay sharp; heroes (shown up to ~560 px wide) are best at around 1100 px.
 
 | File in `public/images/` | Supplied as | Used for | Source / photographer | Licence |
@@ -79,6 +86,12 @@ Hero photos supplied for nine services (FixIt Now, Health & Wellness, Artisan & 
 | `fixit-now/appliance-repair.webp` | `2.jpg` | FixIt Now: Appliance repair | Unknown stock source (supplied by client); faint repeating watermark; identifiable person repairing a washing machine | **Not confirmed - replace with licensed copy** |
 | `health-wellness/hero.webp` | `RNB_Health_wellness.jpg` | Health & Wellness | Unknown stock preview (supplied by client) | **Not confirmed - replace with licensed copy** |
 | `artisan-carpenter/hero.webp` | `RNB_carpenter.jpg` | Artisan & Carpenter | Vecteezy preview (watermarked, supplied by client) | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/custom-furniture.webp` | `12.jpg` | Artisan & Carpenter: Custom furniture | Unknown source (supplied by client); no watermark; looks AI-generated (rendered carved figure + chair); 626 x 351 px | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/door-window-fitting.webp` | `11.jpg` | Artisan & Carpenter: Door & window fitting | Unknown source (supplied by client); no obvious watermark; identifiable person fitting a window | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/kitchen-cabinets.webp` | `10.jpg` | Artisan & Carpenter: Kitchen cabinets | Unknown stock source (supplied by client); faint repeating watermark (looks like Dreamstime); fitted walnut kitchen, no people | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/tiling-flooring.webp` | `9.jpg` | Artisan & Carpenter: Tiling & flooring | Unknown source (supplied by client); no obvious watermark; identifiable person laying floor tiles; 547 x 365 px | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/painting-plastering.webp` | `8.jpg` | Artisan & Carpenter: Painting & plastering | Unknown stock source (supplied by client); faint repeating watermark; identifiable person with a paint roller and tray | **Not confirmed - replace with licensed copy** |
+| `artisan-carpenter/welding-metal-gates.webp` | `7.jpg` | Artisan & Carpenter: Welding & metal gates | Unknown source (supplied by client); no obvious watermark; welder in goggles and hard hat (face partly covered); portrait photo only 365 x 547 px | **Not confirmed - replace with licensed copy** |
 | `buy-any-car/hero.webp` | `7.jpg` | Buy Any Car | Vecteezy preview (tiled watermarks across the whole photo; supplied by client) | **Not confirmed - replace with licensed copy** |
 | `rent-and-lease/hero.webp` | `14.jpg` | Rent & Lease | Unknown source (supplied by client); no watermark; only 239 x 192 px | **Not confirmed - replace with licensed copy** |
 | `events/hero.webp` | `21.webp` | Event Decor & Event Planning | Unknown source (supplied by client); no watermark; professional event photo of an identifiable person | **Not confirmed - confirm the licence and the person's consent, or replace** |
@@ -129,6 +142,8 @@ Hero photos supplied for nine services (FixIt Now, Health & Wellness, Artisan & 
 | `good-to-eat/suya-skewers.webp` | `31.jpg` | Good to Eat: Suya skewers | Unknown source (supplied by client); no watermark | **Not confirmed - replace with licensed copy** |
 
 The original hero files are kept, under the names they were supplied with, in `_assets/photos/_originals/`.
+The six Artisan & Carpenter listing photos were supplied as `7.jpg` - `12.jpg` (a later batch, reusing file names of earlier ones - the
+"Supplied as" column is only meaningful per batch); the unmodified files sit in `_assets/photos/artisan-carpenter/` under their listing ids.
 The six FixIt Now listing photos were supplied as `1.jpg` - `6.jpg` (a second batch with the same file names as the Health & Wellness one); the
 unmodified files sit in `_assets/photos/fixit-now/` under their listing ids (see the "Supplied as" column).
 The six Health & Wellness listing photos were supplied as `1.jpg` - `6.jpg`; the unmodified files now sit in

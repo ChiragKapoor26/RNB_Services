@@ -33,7 +33,14 @@
     "hero": "hero.webp"
   },
   "artisan-carpenter": {
-    "items": {},
+    "items": {
+      "custom-furniture": "custom-furniture.webp",
+      "door-window-fitting": "door-window-fitting.webp",
+      "kitchen-cabinets": "kitchen-cabinets.webp",
+      "painting-plastering": "painting-plastering.webp",
+      "tiling-flooring": "tiling-flooring.webp",
+      "welding-metal-gates": "welding-metal-gates.webp"
+    },
     "hero": "hero.webp"
   },
   "events": {

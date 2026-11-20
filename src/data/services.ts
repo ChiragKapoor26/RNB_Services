@@ -273,6 +273,7 @@ export const services: Service[] = [
         title: 'Custom furniture',
         description: 'Beds, wardrobes, dining sets and office desks made to your size and style.',
         tag: 'Carpentry',
+        imageFocus: '66% 50%', // the carved figure + the chair, together, in both the wide card and the square thumbnail
         offers: { ghana: gh(2800, 'Kumasi', 'per piece'), canada: ca(650, 'Toronto', 'per piece') },
         details: ['Made to measure', 'Choice of timber & finish'],
       },
@@ -281,6 +282,7 @@ export const services: Service[] = [
         title: 'Door & window fitting',
         description: 'Supply and professional fitting of timber, aluminium and steel doors and windows.',
         tag: 'Fitting',
+        imageFocus: '65% 40%', // him (face + the window handle) in the middle of the frame, window panes either side
         offers: { ghana: gh(650, 'Accra', 'per opening'), canada: ca(190, 'Ottawa', 'per opening') },
         details: ['Supply & fit', 'Timber, aluminium, steel'],
       },
@@ -289,6 +291,7 @@ export const services: Service[] = [
         title: 'Kitchen cabinets',
         description: 'Fitted kitchen cabinets and worktops designed around your space and budget.',
         tag: 'Kitchens',
+        imageFocus: '55% 50%', // the sink run + the built-in ovens (the hob at the far left is what the square thumbnail drops)
         offers: { ghana: gh(6500, 'Accra', 'per kitchen'), canada: ca(2600, 'Calgary', 'per kitchen') },
         details: ['Design & install', 'Worktops available'],
       },
@@ -297,6 +300,7 @@ export const services: Service[] = [
         title: 'Tiling & flooring',
         description: 'Floor and wall tiling, laminate and vinyl flooring with clean, level finishes.',
         tag: 'Finishing',
+        imageFocus: '30% 50%', // the tiler at the left + the tiles he is levelling (the bucket at the far left is what the square thumbnail drops)
         offers: { ghana: gh(65, 'Takoradi', 'per m²'), canada: ca(9, 'Toronto', 'per sq ft') },
         details: ['Floors & walls', 'Labour or supply & fit'],
       },
@@ -305,6 +309,7 @@ export const services: Service[] = [
         title: 'Painting & plastering',
         description: 'Interior and exterior painting and smooth plastering for homes and shops.',
         tag: 'Finishing',
+        imageFocus: '57% 50%', // his smile (with the hard hat) + the roller and paint tray
         offers: { ghana: gh(38, 'Kumasi', 'per m²'), canada: ca(3.5, 'Ottawa', 'per sq ft') },
         details: ['Interior & exterior', 'Surface preparation'],
       },
@@ -313,6 +318,7 @@ export const services: Service[] = [
         title: 'Welding & metal gates',
         description: 'Gates, burglar-proofing, railings and custom steelwork fabricated and installed.',
         tag: 'Metalwork',
+        imageFocus: '50% 30%', // tall photo: keeps the hard hat + goggles and the cutting torch in a landscape card (sparks are the part trimmed)
         offers: { ghana: gh(2400, 'Accra', 'per gate'), canada: ca(850, 'Calgary', 'per gate') },
         details: ['Gates & railings', 'Fabricate & install'],
       },
