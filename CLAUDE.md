@@ -28,7 +28,8 @@ the API).
 
 ## Brand
 - Logos in /public/brand: rnb-main (blue shopping cart, "e"), rnb-driver
-(orange taxi), rnb-seller (green basket), rnb-user (green "RU" badge).
+(amber/black "R" mark with the word RUNNER, source `_assets/logos/rnb-driver.png`, a transparent PNG that
+`process-logos.ts` flattens onto white), rnb-seller (green basket), rnb-user (green "RU" badge).
 - Palette (tune after sampling the logos): royal blue #2F5BEA, taxi orange
 #DF6D2E, amber #EFB231, forest green #3E7A45, ink #0B0F1A, off-white #F7F7F5.
 - Typography: elegant serif display (e.g. Playfair Display, echoing the logo)

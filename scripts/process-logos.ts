@@ -31,13 +31,34 @@ await sharp(src('rnb-main.png')).resize(512).png({ compressionLevel: 9 }).toFile
 
 // App logos
 for (const [file, name] of [
-  ['rnb-driver.jpg', 'rnb-driver'],
   ['rnb-seller.jpg', 'rnb-seller'],
   ['rnb-user.jpg', 'rnb-user'],
 ] as const) {
   const img = await cropEdges(file)
   await img.clone().resize({ width: 1000 }).webp({ quality: 88 }).toFile(out(`${name}.webp`))
   await img.clone().resize({ width: 480 }).webp({ quality: 85 }).toFile(out(`${name}-sm.webp`))
+}
+
+/**
+ * Driver app logo (RUNNER). The source is a square, transparent 4000px PNG, so: flatten onto white (like the
+ * seller/user logos), trim the empty margin and centre it on the same ~1.15:1 canvas the other app logos use.
+ * The 3D hero cards (2.2 x 1.9) and every <img width/height> assume that shape.
+ */
+const driverArt = await sharp(src('rnb-driver.png'))
+  .flatten({ background: '#ffffff' })
+  .trim({ background: '#ffffff', threshold: 12 })
+  .toBuffer()
+for (const [width, height, quality, file] of [
+  [1000, 867, 90, 'rnb-driver.webp'],
+  [480, 416, 88, 'rnb-driver-sm.webp'],
+] as const) {
+  const art = await sharp(driverArt)
+    .resize({ width: Math.round(width * 0.84), height: Math.round(height * 0.84), fit: 'inside' })
+    .toBuffer()
+  await sharp({ create: { width, height, channels: 3, background: '#ffffff' } })
+    .composite([{ input: art, gravity: 'centre' }])
+    .webp({ quality })
+    .toFile(out(file))
 }
 
 // Favicons

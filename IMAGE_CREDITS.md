@@ -9,7 +9,7 @@ Every image used on the site must be listed here with its source and licence.
 | `public/brand/rnb-main.*` | R&B Services Online - blue shopping cart "e" logo | Supplied by the client - all rights reserved by R&B Services |
 | `public/brand/rnb-user.*` | R&B User App logo | Supplied by the client |
 | `public/brand/rnb-seller.*` | R&B Seller App logo | Supplied by the client |
-| `public/brand/rnb-driver.*` | R&B Taxi Driver App logo | Supplied by the client |
+| `public/brand/rnb-driver.*` | R&B Driver App logo (RUNNER) | Supplied by the client |
 | `public/favicon.png`, `apple-touch-icon.png`, `og-image.png` | Derived from the main logo | Supplied by the client |
 
 ## Photos
