@@ -36,7 +36,7 @@ export const apps: AppInfo[] = [
     name: 'R&B Driver App',
     audience: 'For taxi drivers and parcel couriers',
     description:
-      'Accept ride and parcel requests from your area, see the route up front, and drive when it suits you with the R&B Taxi, R&B Go and R&B Parcel Express network.',
+      'Accept ride and parcel requests from your area, see the route up front, and drive when it suits you with the R&B Runner, R&B Go and R&B Parcel Express network.',
     logo: '/brand/rnb-driver.webp',
     logoSmall: '/brand/rnb-driver-sm.webp',
     accent: 'orange',

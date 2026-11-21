@@ -789,12 +789,12 @@ export const services: Service[] = [
     slug: 'rides-and-parcels',
     title: 'Rides & Parcels',
     shortTitle: 'Rides & Parcels',
-    summary: 'R&B Taxi, R&B Go and R&B Parcel Express - moving people and packages.',
+    summary: 'R&B Runner, R&B Go and R&B Parcel Express - moving people and packages.',
     accent: 'orange',
     icon: 'taxi',
     featuredApp: 'driver',
     intro: [
-      'Need to get somewhere - or get something delivered? Rides & Parcels brings together three R&B services: R&B Taxi for classic taxi rides, R&B Go for everyday trips and R&B Parcel Express for home parcel pick-up and delivery.',
+      'Need to get somewhere - or get something delivered? Rides & Parcels brings together three R&B services: R&B Runner for classic taxi rides, R&B Go for everyday trips and R&B Parcel Express for home parcel pick-up and delivery.',
       'Request a ride or parcel and we connect you with a nearby driver from the R&B Driver app network. You agree the fare directly with the driver.',
     ],
     steps: [
@@ -805,7 +805,7 @@ export const services: Service[] = [
     feeNote: STANDARD_FEE,
     subServices: [
       {
-        name: 'R&B Taxi',
+        name: 'R&B Runner',
         description: 'Classic taxi rides for airport runs, intercity trips and when you want a dependable ride.',
         icon: 'taxi',
       },
@@ -825,7 +825,7 @@ export const services: Service[] = [
         id: 'airport-transfer',
         title: 'Airport transfer',
         description: 'Meet-and-greet pick-ups and drop-offs, with flight-time monitoring.',
-        tag: 'R&B Taxi',
+        tag: 'R&B Runner',
         offers: { ghana: gh(240, 'Accra - Kotoka (ACC)', 'per trip'), canada: ca(68, 'Toronto - Pearson (YYZ)', 'per trip') },
         details: ['Door to terminal', 'Luggage friendly'],
       },
@@ -841,7 +841,7 @@ export const services: Service[] = [
         id: 'intercity-trip',
         title: 'Intercity trip',
         description: 'Comfortable long-distance rides between cities with experienced drivers.',
-        tag: 'R&B Taxi',
+        tag: 'R&B Runner',
         offers: { ghana: gh(1300, 'Accra to Kumasi', 'per trip'), canada: ca(430, 'Toronto to Ottawa', 'per trip') },
         details: ['Pre-booked', 'Door to door'],
       },
